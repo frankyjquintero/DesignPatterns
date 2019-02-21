@@ -68,14 +68,14 @@ se crean y agrupan estos productos.
 evolucionar. 
 ## Ejemplo  
 
-Presentamos a continuación un pequeño ejemplo de uso del patrón escrito en Java. El
-código Java correspondiente a la clase abstracta Automovil y sus subclases aparece a
+Presentamos a continuación un pequeño ejemplo de uso del patrón escrito en C# .Net core. El
+código C# .Net core correspondiente a la clase abstracta Automovil y sus subclases aparece a
 continuación. Es muy sencillo, describe los cuatro atributos de los automóviles así como
 el método mostrarCaracteristicas que permite visualizarlas. 
 
  [CODE]
 
-El código Java correspondiente a la clase abstracta Scooter y sus subclases aparece a
+El código C# .Net core correspondiente a la clase abstracta Scooter y sus subclases aparece a
 continuación. Es similar al de los automóviles, salvo por el atributo espacio que no
 existe para las scooters. 
  [CODE]
@@ -85,7 +85,7 @@ implementación, una para cada familia (eléctrico/gasolina). Es fácil darse cu
 sólo las clases de implementación utilizan las clases concretas de los vehículos. 
 
  [CODE]
-Por último, se presenta el código fuente Java del cliente de la fábrica, a saber el catálogo
+Por último, se presenta el código fuente C# .Net core del cliente de la fábrica, a saber el catálogo
 que es, en nuestro ejemplo, el programa principal. Por motivos de simplicidad, el
 catálogo solicita al comienzo la fábrica que se quiere utilizar (electricidad o gasolina).
 Esta fábrica debería proporcionarse como parámetro al catálogo. 
