@@ -7,24 +7,29 @@ sin tener que conocer las clases concretas destinadas a la creación de estos ob
 El sistema de venta de vehículos gestiona vehículos que funcionan con gasolina y
 vehículos eléctricos. Esta gestión está delegada en el objeto Catálogo encargado de
 crear tales objetos. 
+
 Para cada producto, disponemos de una clase abstracta, de una subclase concreta
 derivando una versión del producto que funciona con gasolina y de una subclase
 concreta derivando una versión del producto que funciona con electricidad. Por
 ejemplo, en la figura 4.1, para el objeto Scooter, existe una clase abstracta Scooter y dos
 subclases concretas ScooterElectricidad y ScooterGasolina. 
+
 El objeto Catálogo puede utilizar estas subclases concretas para instanciar los productos.
 No obstante si fuera necesario incluir nuevas clases de familias de vehículos (diésel o
 mixto gasolina-eléctrico), las modificaciones a realizar en el objeto Catálogo pueden ser
 bastante pesadas. 
+
 El patrón Abstract Factory resuelve este problema introduciendo una interfaz
 FábricaVehículo que contiene la firma de los métodos para definir cada producto. El
 tipo devuelto por estos métodos está constituido por una de las clases abstractas del
 producto. De este modo el objeto Catálogo no necesita conocer las subclases concretas y
 permanece desacoplado de las familias de producto. 
+
 Se incluye una subclase de implementación de FábricaVehículo por cada familia de
 producto, a saber las subclases FábricaVehículoElectricidad y
 FábricaVehículoGasolina. Dicha subclase implementa las operaciones de creación del
 vehículo apropiado para la familia a la que está asociada. 
+
 El objeto Catálogo recibe como parámetro una instancia que responde a la interfaz
 FábricaVehículo, es decir o bien una instancia de FábricaVehículoElectricidad, o bien
 una instancia de FábricaVehículoGasolina. Con dicha instancia, el catálogo puede crear
@@ -34,6 +39,7 @@ concretas de instanciación correspondientes.
 El conjunto de clases del patrón Abstract Factory para este ejemplo se detalla en la
 figura 4.1. 
 ![alt text](https://raw.githubusercontent.com/frankyjquintero/DesignPatterns/master/DesignPatterns.AbstractFactory/4.1.jpg)
+
 ## Estructura 
 ### 1. Diagrama de clases 
 La figura 4.2 detalla la estructura genérica del patrón. 
