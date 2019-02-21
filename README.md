@@ -1,23 +1,12 @@
-# DesignPatterns
+# Design patterns o patrones de diseño
 
 ## Descripción de los patrones de diseño 
 Hemos decidido describir los patrones de diseño con ayuda de los siguientes lenguajes: 
 ### El lenguaje de modelización UML introducido por el OMG
 (http://www.omg.org). 
-### El lenguaje de programación Java creado por la empresa Oracle
-(http://www.java.com). 
-Los patrones de diseño se describen desde la sección 2 - Patrones de construcción hasta
-la sección 4 - Patrones de comportamiento. Para cada patrón se presentan los siguientes
-elementos: 
-### El nombre del patrón. 
-### La descripción del patrón. 
-### Un ejemplo describiendo el problema y la solución basada en el patrón descrito mediante un diagrama de clases UML. En este diagrama, se describe el cuerpo de los métodos utilizando notas. 
-### La estructura genérica del patrón, a saber: 
-### Su esquema, extraído de cualquier contexto particular, bajo la forma de un diagrama de clases UML. 
-### La lista de participantes del patrón. 
-### Las colaboraciones en el patrón. 
-### Los dominios de la aplicación del patrón. 
-### Un ejemplo, presentado esta vez bajo la forma de un programa Java completo y documentado. Este programa no utiliza una interfaz gráfica sino exclusivamente las entradas/salidas por pantalla y teclado. 
+### El lenguaje de programación .Net core
+(https://dotnet.github.io/). 
+
 
 ## Catálogo de patrones de diseño 
 
