@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.AbstractFactory
 {
-    internal class Program
+    internal class Catalogo
     {
         ////public static void Main(string[] args)
         ////{
