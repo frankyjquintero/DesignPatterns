@@ -110,3 +110,112 @@ facilitan la organización de la jerarquía de clases y de sus relaciones. Se de
 ## Los patrones de comportamiento 
 proporcionan soluciones para organizar las interacciones y para repartir el procesamiento entre los objetos. Se describen en la parte 4- Patrones de comportamiento. Son un total de once: Chain of responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method y Visitor. 
  
+ 
+ # Caso de Estudio Venta Online de vehiculos 
+## Descripción del sistema 
+En este libro tomaremos un ejemplo de diseño de un sistema para ilustrar el uso de los
+veintitrés patrones de diseño. 
+El sistema que vamos a diseñar es un sitio web de venta online de vehículos como, por
+ejemplo, automóviles o motocicletas. Este sistema autoriza distintas operaciones como
+la visualización de un catálogo, la recogida de un pedido, la gestión y el seguimiento de
+los clientes. Además estará accesible bajo la forma de un servicio web. 
+## Cuaderno de carga 
+El sitio permite visualizar un catálogo de vehículos puestos a la venta, realizar
+búsquedas en el catálogo, realizar el pedido de un vehículo, seleccionar las opciones
+para el mismo mediante un sistema de carro de la compra virtual. Las opciones
+incompatibles también deben estar gestionadas (por ejemplo "asientos deportivos" y
+"asientos en cuero" son opciones incompatibles). También es posible volver a un estado
+anterior del carro de la compra. 
+El sistema debe administrar los pedidos. Debe ser capaz de calcular los impuestos en
+función del país de entrega del vehículo. También debe gestionar los pedidos pagados al
+contado y aquellos que están ligados a una petición de crédito. Para ello, se tendrá en
+cuenta las peticiones de crédito. El sistema administra los estados del pedido: en curso,
+validado y entregado. 
+Al realizar el pedido de un vehículo, el sistema construye el conjunto de documentos
+necesarios como la solicitud de matriculación, el certificado de cesión y la orden de
+pedido. Estos documentos estarán disponibles en formato PDF o en formato HTML. 
+El sistema también permite rebajar los vehículos de difícil venta, como por ejemplo
+aquellos que se encuentran en stock pasado un tiempo. 
+También permite realizar una gestión de los clientes, en particular de empresas que
+poseen filiales para proporcionarles, por ejemplo, la compra de una flota de vehículos. 
+Tras la virtualización del catálogo, es posible visualizar animaciones asociadas a un
+vehículo. El catálogo puede presentarse con uno o tres vehículos por cada línea de
+resultados. 
+
+La búsqueda en el catálogo puede realizarse con ayuda de palabras clave y de
+operadores lógicos (y, o). 
+Es posible acceder al sistema mediante una interfaz web clásica o a través de un sistema
+de servicios web. 
+## Uso de patrones de diseño 
+Para cumplir con los distintos requisitos expresados en el cuaderno de carga,
+utilizaremos en los siguientes capítulos los patrones de diseño. Se tomarán en cuenta en
+las siguientes partes de la concepción del sitio web: 
+
+Descripción de la sección /#/ 
+### Patrón de diseño 
+----------------------------
+Construir los objetos de dominio (coche de gasolina,
+coche diesel, coche eléctrico, etc.). 
+### Abstract Factory 
+ ----------------------------
+Construir los conjuntos de documentos necesarios en
+caso de comprar un vehículo. 
+### Builder, Prototype 
+----------------------------
+Crear los pedidos. 
+### Factory Method 
+----------------------------
+Crear el conjunto en blanco de los documentos.  
+### Singleton 
+----------------------------
+Gestionar los documentos PDF. 
+### Adapter 
+----------------------------
+Implementar los formularios en HTML o mediante un
+applet.
+### Bridge 
+----------------------------
+Representar las empresas clientes. 
+### Composite 
+----------------------------
+Visualizar los vehículos del catálogo. 
+### Decorator, Observer, Strategy 
+----------------------------
+Proporcionar la interfaz mediante servicios web del
+sitio.
+### Facade 
+----------------------------
+Administrar las opciones de un vehículo en un pedido. 
+### Flyweight, Memento
+----------------------------
+Administrar la visualización de animaciones para cada
+vehículo del catálogo.
+### Proxy 
+----------------------------
+Administrar la descripción de un vehículo. 
+### Chain of responsibility 
+----------------------------
+Rebajar los vehículos en stock pasado un periodo
+determinado.
+### Command 
+----------------------------
+Realizar búsquedas en la base de vehículos mediante
+una búsqueda escrita en forma de expresión lógica.
+### Interpreter 
+----------------------------
+Devolver secuencialmente los vehículos del catálogo. 
+### Iterator
+----------------------------
+Gestionar el formulario de una solicitud de crédito. 
+### Mediator
+----------------------------
+Gestionar los estados de un pedido. 
+### State 
+----------------------------
+Calcular el importe de un pedido. 
+### Template Method 
+----------------------------
+Enviar propuestas comerciales por correo electrónico a
+ciertas empresas clientes.
+### Visitor 
+----------------------------
