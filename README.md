@@ -94,3 +94,19 @@ operaciones de un objeto, estando éstas descritas en las subclases.
 construye una operación a realizar en los elementos de un conjunto de
 objetos. Es posible agregar nuevas operaciones sin modificar las clases de estos
 objetos. 
+
+
+# Organización del catálogo de patrones de diseño 
+Para organizar el catálogo de patrones de diseño, retomamos la clasificación del "GoF"
+que organiza los patrones según su vocación: construcción, estructuración y
+comportamiento. 
+
+## Los patrones de construcción 
+tienen como objetivo organizar la creación de objetos. Se describen en la parte 2 - Patrones de contrucción. Son un total de cinco: Abstract Factory, Builder, Factory Method, Prototype y Singleton. 
+
+## Los patrones de estructuración 
+facilitan la organización de la jerarquía de clases y de sus relaciones. Se describen en la parte 3 - Patrones de estructuración. Son un total de siete: Adapter, Bridge, Composite, Decorator, Facade, Flyweight y Proxy. 
+
+## Los patrones de comportamiento 
+proporcionan soluciones para organizar las interacciones y para repartir el procesamiento entre los objetos. Se describen en la parte 4- Patrones de comportamiento. Son un total de once: Chain of responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method y Visitor. 
+ 
