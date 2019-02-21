@@ -4,7 +4,7 @@
 Hemos decidido describir los patrones de diseño con ayuda de los siguientes lenguajes: 
 
 * El lenguaje de modelización UML introducido por el OMG (http://www.omg.org). 
-* El lenguaje de programación .Net core (https://dotnet.github.io/). 
+* El lenguaje de programación C# .Net core (https://dotnet.github.io/). 
 
 
 ## Catálogo de patrones de diseño 
