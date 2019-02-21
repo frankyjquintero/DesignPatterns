@@ -33,11 +33,12 @@ concretas de instanciación correspondientes.
 
 El conjunto de clases del patrón Abstract Factory para este ejemplo se detalla en la
 figura 4.1. 
-
+![alt text](https://raw.githubusercontent.com/frankyjquintero/DesignPatterns/master/DesignPatterns.AbstractFactory/4.1.jpg)
 ## Estructura 
 ### 1. Diagrama de clases 
 La figura 4.2 detalla la estructura genérica del patrón. 
 
+![alt text](https://raw.githubusercontent.com/frankyjquintero/DesignPatterns/master/DesignPatterns.AbstractFactory/4.2.jpg)
 
 ### 2. Participantes 
 Los participantes del patrón son los siguientes: 
