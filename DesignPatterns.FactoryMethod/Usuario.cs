@@ -11,5 +11,6 @@ public class Usuario
         cliente = new ClienteCredito();
         cliente.nuevoPedido(2000.0);
         cliente.nuevoPedido(10000.0);
+        Console.ReadKey();
     }
 }
