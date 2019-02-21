@@ -12,7 +12,7 @@
             this.color = color;
             this.potencia = potencia;
         }
-        public abstract void mostrarCaracteristicas();
+        public abstract void MostrarCaracteristicas();
     }
 
 

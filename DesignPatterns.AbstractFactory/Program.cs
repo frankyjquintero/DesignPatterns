@@ -35,19 +35,19 @@ namespace DesignPatterns.AbstractFactory
             }
             for (int index = 0; index < nAutos; index++)
             {
-                autos[index] = fabrica.creaAutomovil("estandar", "amarillo", 6 + index, 3.2);
+                autos[index] = fabrica.CreaAutomovil("estandar", "amarillo", 6 + index, 3.2);
             }
             for (int index = 0; index < nScooters; index++)
             {
-                scooters[index] = fabrica.creaScooter("clasico", "rojo", 2 + index);
+                scooters[index] = fabrica.CreaScooter("clasico", "rojo", 2 + index);
             }
             foreach (Automovil auto in autos)
             {
-                auto.mostrarCaracteristicas();
+                auto.MostrarCaracteristicas();
             }
             foreach (Scooter scooter in scooters)
             {
-                scooter.mostrarCaracteristicas();
+                scooter.MostrarCaracteristicas();
             }
         }
     }

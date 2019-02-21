@@ -8,7 +8,7 @@ namespace DesignPatterns.AbstractFactory
         {
         }
 
-        public override void mostrarCaracteristicas()
+        public override void MostrarCaracteristicas()
         {
             Console.WriteLine("Scooter electrica de modelo: " + modelo + " de color: " + color + " de potencia: " + potencia);
         }

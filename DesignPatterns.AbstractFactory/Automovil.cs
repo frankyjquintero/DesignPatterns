@@ -14,7 +14,7 @@
             this.potencia = potencia;
             this.espacio = espacio;
         }
-        public abstract void mostrarCaracteristicas();
+        public abstract void MostrarCaracteristicas();
     }
 
 

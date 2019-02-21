@@ -9,7 +9,7 @@ namespace DesignPatterns.AbstractFactory
             : base(modelo,
                 color, potencia, espacio)
         { }
-        public override void mostrarCaracteristicas()
+        public override void MostrarCaracteristicas()
         {
             Console.WriteLine(
                 "Automóvil de gasolina de modelo: " + modelo +
