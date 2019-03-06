@@ -4,7 +4,7 @@ namespace DesignPatterns.ReflectiveVisitor
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Empresa empresa1 = new EmpresaSinFilial("empresa1",
                 "info@empresa1.com", "calle de la empresa 1");

@@ -4,7 +4,7 @@ namespace DesignPatterns.Decorator
 {
     public static class VistaCatalogo
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             VistaVehiculo vistaVehiculo = new VistaVehiculo();
             ModeloDecorador modeloDecorador = new

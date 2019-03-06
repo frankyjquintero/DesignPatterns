@@ -4,7 +4,7 @@ namespace DesignPatterns.Command
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Vehiculo vehiculo1 = new Vehiculo("A01", 1, 1000.0);
             Vehiculo vehiculo2 = new Vehiculo("A11", 6, 2000.0);

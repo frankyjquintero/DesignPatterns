@@ -4,7 +4,7 @@ namespace DesignPatterns.Builder
 {
     public static class ClienteVehiculo
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             ConstructorDocumentacionVehiculo constructor;
             Console.WriteLine("Desea generar " +

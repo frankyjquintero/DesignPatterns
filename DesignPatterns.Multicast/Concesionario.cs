@@ -4,7 +4,7 @@ namespace DesignPatterns.Multicast
 {
     internal static class Concesionario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             DireccionGeneral direccionGeneral = new
                 DireccionGeneral();

@@ -4,7 +4,7 @@ namespace DesignPatterns.Observer
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Vehiculo vehiculo = new Vehiculo();
             vehiculo.Descripcion = "Vehículo económico";

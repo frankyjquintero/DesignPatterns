@@ -4,7 +4,7 @@ namespace DesignPatterns.FactoryMethod
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Cliente cliente;
             cliente = new ClienteContado();

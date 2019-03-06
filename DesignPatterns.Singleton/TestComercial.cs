@@ -4,7 +4,7 @@ namespace DesignPatterns.Singleton
 {
     public static class TestComercial
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // inicialización del comercial en el sistema
             Comercial elComercial = Comercial.Instance();

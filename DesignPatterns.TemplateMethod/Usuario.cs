@@ -4,7 +4,7 @@ namespace DesignPatterns.TemplateMethod
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Pedido pedidoEspaña = new PedidoEspaña();
             pedidoEspaña.SetImporteSinIva(10000);

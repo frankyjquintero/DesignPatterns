@@ -2,7 +2,7 @@ namespace DesignPatterns.Iterator
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             CatalogoVehiculo catalogo = new CatalogoVehiculo();
             IteradorVehiculo iterador = catalogo.Busqueda(

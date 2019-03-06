@@ -4,7 +4,7 @@ namespace DesignPatterns.Prototype
 {
     public class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             DocumentacionEnBlanco documentacionEnBlanco = DocumentacionEnBlanco.Instance();
             documentacionEnBlanco.Incluye(new OrdenDePedido());

@@ -4,7 +4,7 @@ namespace DesignPatterns.Strategy
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             VistaCatalogo vistaCatalogo1 = new VistaCatalogo(new
                 DibujaTresVehiculosPorLinea());

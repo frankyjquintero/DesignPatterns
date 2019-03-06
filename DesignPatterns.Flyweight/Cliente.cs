@@ -4,7 +4,7 @@ namespace DesignPatterns.Flyweight
 {
     public static class Client
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             FabricaOpcion fabrica = new FabricaOpcion();
             VehiculoSolicitado vehiculo = new VehiculoSolicitado();

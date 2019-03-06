@@ -4,7 +4,7 @@ namespace DesignPatterns.Memento
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             IMemento memento;
             OpcionVehiculo opcion1 = new OpcionVehiculo(

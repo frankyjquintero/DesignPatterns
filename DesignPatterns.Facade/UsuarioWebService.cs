@@ -5,7 +5,7 @@ namespace DesignPatterns.Facade
 {
     public static class UsuarioWebService
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             IWebServiceAuto webServiceAuto = new
                 WebServiceAutoImpl();

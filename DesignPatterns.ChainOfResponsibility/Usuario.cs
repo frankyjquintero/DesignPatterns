@@ -4,7 +4,7 @@ namespace DesignPatterns.ChainOfResponsibility
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             ObjetoBasico vehiculo1 = new Vehiculo(
                 "Auto++ KT500 Vehículo de ocasión en buen estado");

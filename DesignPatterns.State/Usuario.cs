@@ -4,7 +4,7 @@ namespace DesignPatterns.State
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Pedido pedido = new Pedido();
             pedido.AgregaProducto(new Producto("vehículo 1"));

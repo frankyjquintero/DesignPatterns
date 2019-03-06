@@ -4,7 +4,7 @@ namespace DesignPatterns.Mediator
 {
     public static class Usuario
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Formulario formulario = new Formulario();
             formulario.AgregaControl(new ZonaInformacion("Nombre"));
