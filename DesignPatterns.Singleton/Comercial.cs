@@ -2,9 +2,9 @@ using System;
 
 public class Comercial
 {
-  public string nombre { get; set; }
-  public string direccion { get; set; }
-  public string email { get; set; }
+  public string Nombre { get; set; }
+  public string Direccion { get; set; }
+  public string Email { get; set; }
 
   private static Comercial _instance = null;
 
@@ -17,11 +17,11 @@ public class Comercial
     return _instance;
   }
 
-  public void visualiza()
+  public void Visualiza()
   {
-    Console.WriteLine("Nombre: " + nombre);
-    Console.WriteLine("Dirección: " + direccion);
-    Console.WriteLine("Email: " + email);
+    Console.WriteLine("Nombre: " + Nombre);
+    Console.WriteLine("Dirección: " + Direccion);
+    Console.WriteLine("Email: " + Email);
   }
 
 }

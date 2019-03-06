@@ -6,17 +6,17 @@ public class TestComercial
   {
     // inicialización del comercial en el sistema
     Comercial elComercial = Comercial.Instance();
-    elComercial.nombre = "Comercial Auto";
-    elComercial.direccion = "Madrid";
-    elComercial.email = "comercial@comerciales.com";
+    elComercial.Nombre = "Comercial Auto";
+    elComercial.Direccion = "Madrid";
+    elComercial.Email = "comercial@comerciales.com";
     // muestra el comercial del sistema
-    visualiza();
+    Visualiza();
     Console.ReadKey();
   }
 
-  public static void visualiza()
+  public static void Visualiza()
   {
     Comercial elComercial = Comercial.Instance();
-    elComercial.visualiza();
+    elComercial.Visualiza();
   }
 }
