@@ -103,8 +103,7 @@ objetivo del patrón Abstract Factory.
 
 A continuación se muestra un ejemplo de ejecución para vehículos eléctricos:
 
-´´
-Desea utilizar vehiculos electricos (1)   
+` Desea utilizar vehiculos electricos (1)   
 o a gasolina (2): 1  
 Automovil electrico de modelo: estandar de color:   
 amarillo de potencia: 6   
@@ -119,8 +118,7 @@ Scooter electrica de modelo: clasico de color:
 rojo de potencia: 2  
 Scooter electrica de modelo: clasico de color:   
 rojo de potencia: 3 
-
-´´
+`
 
 En este ejemplo de ejecución se ha creado una fábrica de vehículos eléctricos, de modo
 que el catálogo se compone de automóviles y scooters eléctricos. 
