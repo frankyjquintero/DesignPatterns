@@ -8,7 +8,7 @@ public class DocumentoPdf : Documento
   {
      set
      {
-       herramientaPdf.pdfFixeContenu(value);
+       herramientaPdf.pdfFijaContenido(value);
      }
   }
 
