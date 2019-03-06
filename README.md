@@ -219,3 +219,8 @@ Enviar propuestas comerciales por correo electrónico a
 ciertas empresas clientes.
 ### Visitor 
 ----------------------------
+
+Patrones de diseño para C#
+Los 23 modelos de diseño: descripción y soluciones ilustradas en UML 2 y C#
+
+Dirigido a aquellos diseñadores y desarrolladores que trabajen con Programación Orientada a Objetos. Para comprenderlo bien, es preferible tener conocimientos previos de los principales elementos de los diagramas de clases UML y la última versión del lenguaje C# (a partir de la versión 3.0).
