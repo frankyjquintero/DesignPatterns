@@ -2,31 +2,32 @@ using System;
 
 public class ComponentePdf
 {
-  protected string contenido;
+    protected string contenido;
 
-  public void pdfFijaContenido(string contenido)
-  {
-    this.contenido = contenido;
-  }
+    public void PdfFijaContenido(string contenido)
+    {
+        this.contenido = contenido;
+    }
 
-  public void pdfPreparaVisualizacion()
-  {
-    Console.WriteLine("Visualiza PDF: Comienzo");
-  }
 
-  public void pdfRefresca()
-  {
-    Console.WriteLine("Visualiza contenido PDF: " +
-      contenido);
-  }
+    public void PdfPreparaVisualizacion()
+    {
+        Console.WriteLine("Visualiza PDF: Comienzo");
+    }
 
-  public void pdfFinalizaVisualizacion()
-  {
-    Console.WriteLine("Visualiza PDF: Fin");
-  }
+    public void PdfRefresca()
+    {
+        Console.WriteLine("Visualiza contenido PDF: " +
+          contenido);
+    }
 
-  public void pdfEnviaImpresora()
-  {
-    Console.WriteLine("Impresión PDF: " + contenido);
-  }
+    public void PdfFinalizaVisualizacion()
+    {
+        Console.WriteLine("Visualiza PDF: Fin");
+    }
+
+    public void PdfEnviaImpresora()
+    {
+        Console.WriteLine("Impresión PDF: " + contenido);
+    }
 }

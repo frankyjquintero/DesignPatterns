@@ -1,8 +1,7 @@
-using System;
-
-public interface Documento
+public interface IDocumento
 {
-  string contenido { set; }
-  void dibuja();
-  void imprime();
+    string Contenido { set; }
+    void Dibuja();
+    void Imprime();
+
 }

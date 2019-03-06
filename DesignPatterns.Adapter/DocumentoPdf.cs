@@ -1,26 +1,21 @@
-using System;
-
-public class DocumentoPdf : Documento
+public class DocumentoPdf : IDocumento
 {
-  protected ComponentePdf herramientaPdf = new ComponentePdf();
+    protected ComponentePdf herramientaPdf = new ComponentePdf();
 
-  public string contenido
-  {
-     set
-     {
-       herramientaPdf.pdfFijaContenido(value);
-     }
-  }
+    public string Contenido
+    {
+        set => herramientaPdf.PdfFijaContenido(value);
+    }
 
-  public void dibuja()
-  {
-    herramientaPdf.pdfPreparaVisualizacion();
-    herramientaPdf.pdfRefresca();
-    herramientaPdf.pdfFinalizaVisualizacion();
-  }
+    public void Dibuja()
+    {
+        herramientaPdf.PdfPreparaVisualizacion();
+        herramientaPdf.PdfRefresca();
+        herramientaPdf.PdfFinalizaVisualizacion();
+    }
 
-  public void imprime()
-  {
-    herramientaPdf.pdfEnviaImpresora();
-  }
+    public void Imprime()
+    {
+        herramientaPdf.PdfEnviaImpresora();
+    }
 }

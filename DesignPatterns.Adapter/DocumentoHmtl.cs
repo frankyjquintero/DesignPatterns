@@ -1,31 +1,25 @@
 using System;
 
-public class DocumentoHtml : Documento
+public class DocumentoHtml : IDocumento
 {
-  protected string _contenido;
+    protected string _contenido;
 
-  public string contenido
-  {
-     protected get
-     {
-       return _contenido;
-     }
-     set
-     {
-       _contenido = value;
-     }
-  }
+    public string Contenido
+    {
+        protected get => _contenido;
+        set => _contenido = value;
+    }
 
-  public void dibuja()
-  {
-    Console.WriteLine("Dibuja el documento HTML: " +
-      contenido);
-  }
+    public void Dibuja()
+    {
+        Console.WriteLine("Dibuja el documento HTML: " +
+          Contenido);
+    }
 
-  public void imprime()
-  {
-    Console.WriteLine("Imprime el documento HTML: " +
-      contenido);
-  }
+    public void Imprime()
+    {
+        Console.WriteLine("Imprime el documento HTML: " +
+          Contenido);
+    }
 
 }
