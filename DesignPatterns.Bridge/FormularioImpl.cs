@@ -1,7 +1,5 @@
-using System;
-
-public interface FormularioImpl
+public interface IFormularioImpl
 {
-    void dibujaTexto(string texto);
-    string administraZonaIndicada();
+    void DibujaTexto(string texto);
+    string AdministraZonaIndicada();
 }

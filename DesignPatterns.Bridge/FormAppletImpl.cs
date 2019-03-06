@@ -1,14 +1,14 @@
 using System;
 
-public class FormAppletImpl : FormularioImpl
+public class FormAppletImpl : IFormularioImpl
 {
 
-    public void dibujaTexto(string texto)
+    public void DibujaTexto(string texto)
     {
         Console.WriteLine("Applet: " + texto);
     }
 
-    public string administraZonaIndicada()
+    public string AdministraZonaIndicada()
     {
         return Console.ReadLine();
     }

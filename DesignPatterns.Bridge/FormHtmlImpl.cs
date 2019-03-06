@@ -1,14 +1,14 @@
 using System;
 
-public class FormHtmlImpl : FormularioImpl
+public class FormHtmlImpl : IFormularioImpl
 {
 
-    public void dibujaTexto(string texto)
+    public void DibujaTexto(string texto)
     {
         Console.WriteLine("HTML: " + texto);
     }
 
-    public string administraZonaIndicada()
+    public string AdministraZonaIndicada()
     {
         return Console.ReadLine();
     }

@@ -1,34 +1,32 @@
-using System;
-
 public abstract class FormularioMatriculacion
 {
     protected string contenido;
-    protected FormularioImpl implementacion;
+    protected IFormularioImpl implementacion;
 
-    public FormularioMatriculacion(FormularioImpl
+    public FormularioMatriculacion(IFormularioImpl
       implementacion)
     {
         this.implementacion = implementacion;
     }
 
-    public void visualiza()
+    public void Visualiza()
     {
-        implementacion.dibujaTexto(
+        implementacion.DibujaTexto(
         "número de matrícula existente: ");
     }
 
-    public void generaDocumento()
+    public void GeneraDocumento()
     {
-        implementacion.dibujaTexto("Solicitud de matriculación");
-        implementacion.dibujaTexto("número de matrícula: " +
+        implementacion.DibujaTexto("Solicitud de matriculación");
+        implementacion.DibujaTexto("número de matrícula: " +
         contenido);
     }
 
-    public bool administraZona()
+    public bool AdministraZona()
     {
-        contenido = implementacion.administraZonaIndicada();
-        return this.controlZona(contenido);
+        contenido = implementacion.AdministraZonaIndicada();
+        return ControlZona(contenido);
     }
 
-    protected abstract bool controlZona(string matricula);
+    protected abstract bool ControlZona(string matricula);
 }

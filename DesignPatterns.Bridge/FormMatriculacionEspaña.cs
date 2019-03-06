@@ -1,12 +1,10 @@
-using System;
-
 public class FormularioMatriculacionEspaña :
   FormularioMatriculacion
 {
-    public FormularioMatriculacionEspaña(FormularioImpl
+    public FormularioMatriculacionEspaña(IFormularioImpl
     implementacion) : base(implementacion) { }
 
-    protected override bool controlZona(string matricula)
+    protected override bool ControlZona(string matricula)
     {
         return matricula.Length == 7;
     }

@@ -2,18 +2,25 @@ using System;
 
 public class Usuario
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         FormularioMatriculacionPortugal formulario1 = new
           FormularioMatriculacionPortugal(new FormHtmlImpl());
-        formulario1.visualiza();
-        if (formulario1.administraZona())
-            formulario1.generaDocumento();
+        formulario1.Visualiza();
+        if (formulario1.AdministraZona())
+        {
+            formulario1.GeneraDocumento();
+        }
+
         Console.WriteLine();
         FormularioMatriculacionEspaña formulario2 = new
           FormularioMatriculacionEspaña(new FormAppletImpl());
-        formulario2.visualiza();
-        if (formulario2.administraZona())
-            formulario2.generaDocumento();
+        formulario2.Visualiza();
+        if (formulario2.AdministraZona())
+        {
+            formulario2.GeneraDocumento();
+        }
+
+        Console.ReadKey();
     }
 }
