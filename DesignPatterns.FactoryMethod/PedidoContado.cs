@@ -1,18 +1,21 @@
 using System;
 
-public class PedidoContado : Pedido
+namespace DesignPatterns.FactoryMethod
 {
-    public PedidoContado(double importe) : base(importe) { }
-
-    public override void paga()
+    public class PedidoContado : Pedido
     {
-        Console.WriteLine(
-          "El pago del pedido por importe de: " +
-          importe + " se ha realizado.");
-    }
+        public PedidoContado(double importe) : base(importe) { }
 
-    public override bool valida()
-    {
-        return true;
+        public override void Paga()
+        {
+            Console.WriteLine(
+                "El pago del pedido por importe de: " +
+                importe + " se ha realizado.");
+        }
+
+        public override bool Valida()
+        {
+            return true;
+        }
     }
 }

@@ -1,21 +1,23 @@
-using System;
 using System.Collections.Generic;
 
-public class WebServiceAutoImpl : WebServiceAuto
+namespace DesignPatterns.Facade
 {
-    protected Catalogo catalogo = new ComponenteCatalogo();
-    protected GestionDocumento gestionDocumento = new
-      ComponenteGestionDocumento();
-
-    public string documento(int indice)
+    public class WebServiceAutoImpl : IWebServiceAuto
     {
-        return gestionDocumento.documento(indice);
-    }
+        protected ICatalogo catalogo = new ComponenteCatalogo();
+        protected IGestionDocumento gestionDocumento = new
+            ComponenteGestionDocumento();
 
-    public IList<string> buscaVehiculos(int precioMedio,
-      int desviacionMax)
-    {
-        return catalogo.buscaVehiculos(precioMedio -
-          desviacionMax, precioMedio + desviacionMax);
+        public string Documento(int indice)
+        {
+            return gestionDocumento.Documento(indice);
+        }
+
+        public IList<string> BuscaVehiculos(int precioMedio,
+            int desviacionMax)
+        {
+            return catalogo.BuscaVehiculos(precioMedio -
+                                           desviacionMax, precioMedio + desviacionMax);
+        }
     }
 }

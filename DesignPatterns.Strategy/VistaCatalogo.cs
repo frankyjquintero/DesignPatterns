@@ -1,23 +1,26 @@
 using System.Collections.Generic;
 
-public class VistaCatalogo
+namespace DesignPatterns.Strategy
 {
-    protected IList<VistaVehiculo> contenido =
-        new List<VistaVehiculo>();
-    protected DibujaCatalogo dibujo;
-
-    public VistaCatalogo(DibujaCatalogo dibujo)
+    public class VistaCatalogo
     {
-        contenido.Add(new VistaVehiculo("vehículo económico"));
-        contenido.Add(new VistaVehiculo("vehículo amplio"));
-        contenido.Add(new VistaVehiculo("vehículo rápido"));
-        contenido.Add(new VistaVehiculo("vehículo confortable"));
-        contenido.Add(new VistaVehiculo("vehículo deportivo"));
-        this.dibujo = dibujo;
-    }
+        protected IList<VistaVehiculo> contenido =
+            new List<VistaVehiculo>();
+        protected IDibujaCatalogo dibujo;
 
-    public void dibuja()
-    {
-        dibujo.dibuja(contenido);
+        public VistaCatalogo(IDibujaCatalogo dibujo)
+        {
+            contenido.Add(new VistaVehiculo("vehículo económico"));
+            contenido.Add(new VistaVehiculo("vehículo amplio"));
+            contenido.Add(new VistaVehiculo("vehículo rápido"));
+            contenido.Add(new VistaVehiculo("vehículo confortable"));
+            contenido.Add(new VistaVehiculo("vehículo deportivo"));
+            this.dibujo = dibujo;
+        }
+
+        public void Dibuja()
+        {
+            dibujo.Dibuja(contenido);
+        }
     }
 }

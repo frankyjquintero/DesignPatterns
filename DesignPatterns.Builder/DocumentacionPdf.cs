@@ -1,17 +1,20 @@
 using System;
 
-public class DocumentacionPdf : Documentacion
+namespace DesignPatterns.Builder
 {
-    public override void agregaDocumento(string documento)
+    public class DocumentacionPdf : Documentacion
     {
-        if (documento.StartsWith("<PDF>"))
-            contenido.Add(documento);
-    }
+        public override void AgregaDocumento(string documento)
+        {
+            if (documento.StartsWith("<PDF>"))
+                contenido.Add(documento);
+        }
 
-    public override void imprime()
-    {
-        Console.WriteLine("Documentación PDF");
-        foreach (string s in contenido)
-            Console.WriteLine(s);
+        public override void Imprime()
+        {
+            Console.WriteLine("Documentación PDF");
+            foreach (string s in contenido)
+                Console.WriteLine(s);
+        }
     }
 }

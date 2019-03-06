@@ -1,27 +1,31 @@
 using System;
 
-public class Comercial
+namespace DesignPatterns.Singleton
 {
-  public string Nombre { get; set; }
-  public string Direccion { get; set; }
-  public string Email { get; set; }
+    public class Comercial
+    {
+        public string Nombre { get; set; }
+        public string Direccion { get; set; }
+        public string Email { get; set; }
 
-  private static Comercial _instance = null;
+        private static Comercial _instance = null;
 
-  private Comercial(){}
+        private Comercial()
+        {
+        }
 
-  public static Comercial Instance()
-  {
-    if (_instance == null)
-      _instance = new Comercial();
-    return _instance;
-  }
+        public static Comercial Instance()
+        {
+            if (_instance == null)
+                _instance = new Comercial();
+            return _instance;
+        }
 
-  public void Visualiza()
-  {
-    Console.WriteLine("Nombre: " + Nombre);
-    Console.WriteLine("Dirección: " + Direccion);
-    Console.WriteLine("Email: " + Email);
-  }
-
+        public void Visualiza()
+        {
+            Console.WriteLine("Nombre: " + Nombre);
+            Console.WriteLine("Dirección: " + Direccion);
+            Console.WriteLine("Email: " + Email);
+        }
+    }
 }

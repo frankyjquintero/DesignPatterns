@@ -1,20 +1,21 @@
-using System;
-
-public class Vendedor
+namespace DesignPatterns.Builder
 {
-    protected ConstructorDocumentacionVehiculo constructor;
-
-    public Vendedor(ConstructorDocumentacionVehiculo constructor)
+    public class Vendedor
     {
-        this.constructor = constructor;
-    }
+        protected ConstructorDocumentacionVehiculo constructor;
 
-    public Documentacion construye(string nombreCliente)
-    {
-        constructor.construyeSolicitudPedido(nombreCliente);
-        constructor.construyeSolicitudMatriculacion
-        (nombreCliente);
-        Documentacion documentacion = constructor.resultado();
-        return documentacion;
+        public Vendedor(ConstructorDocumentacionVehiculo constructor)
+        {
+            this.constructor = constructor;
+        }
+
+        public Documentacion Construye(string nombreCliente)
+        {
+            constructor.ConstruyeSolicitudPedido(nombreCliente);
+            constructor.ConstruyeSolicitudMatriculacion
+                (nombreCliente);
+            Documentacion documentacion = constructor.Resultado();
+            return documentacion;
+        }
     }
 }

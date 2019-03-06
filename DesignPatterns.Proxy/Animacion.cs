@@ -1,5 +1,8 @@
-public interface Animacion
+namespace DesignPatterns.Proxy
 {
-    void dibuja();
-    void clic();
+    public interface IAnimacion
+    {
+        void Dibuja();
+        void Clic();
+    }
 }

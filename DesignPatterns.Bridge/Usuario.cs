@@ -1,26 +1,29 @@
 using System;
 
-public class Usuario
+namespace DesignPatterns.Bridge
 {
-    private static void Main(string[] args)
+    public static class Usuario
     {
-        FormularioMatriculacionPortugal formulario1 = new
-          FormularioMatriculacionPortugal(new FormHtmlImpl());
-        formulario1.Visualiza();
-        if (formulario1.AdministraZona())
+        private static void Main(string[] args)
         {
-            formulario1.GeneraDocumento();
-        }
+            FormularioMatriculacionPortugal formulario1 = new
+                FormularioMatriculacionPortugal(new FormHtmlImpl());
+            formulario1.Visualiza();
+            if (formulario1.AdministraZona())
+            {
+                formulario1.GeneraDocumento();
+            }
 
-        Console.WriteLine();
-        FormularioMatriculacionEspaña formulario2 = new
-          FormularioMatriculacionEspaña(new FormAppletImpl());
-        formulario2.Visualiza();
-        if (formulario2.AdministraZona())
-        {
-            formulario2.GeneraDocumento();
-        }
+            Console.WriteLine();
+            FormularioMatriculacionEspaña formulario2 = new
+                FormularioMatriculacionEspaña(new FormAppletImpl());
+            formulario2.Visualiza();
+            if (formulario2.AdministraZona())
+            {
+                formulario2.GeneraDocumento();
+            }
 
-        Console.ReadKey();
+            Console.ReadKey();
+        }
     }
 }

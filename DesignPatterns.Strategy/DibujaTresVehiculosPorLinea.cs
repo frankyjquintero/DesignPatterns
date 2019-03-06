@@ -1,28 +1,31 @@
 using System;
 using System.Collections.Generic;
 
-public class DibujaTresVehiculosPorLinea : DibujaCatalogo
+namespace DesignPatterns.Strategy
 {
-    public void dibuja(IList<VistaVehiculo> contenido)
+    public class DibujaTresVehiculosPorLinea : IDibujaCatalogo
     {
-        int contador;
-        Console.WriteLine(
-          "Dibuja los vehículos mostrando tres vehículos por línea");
-        contador = 0;
-        foreach (VistaVehiculo vistaVehiculo in contenido)
+        public void Dibuja(IList<VistaVehiculo> contenido)
         {
-            vistaVehiculo.dibuja();
-            contador++;
-            if (contador == 3)
+            int contador;
+            Console.WriteLine(
+                "Dibuja los vehículos mostrando tres vehículos por línea");
+            contador = 0;
+            foreach (VistaVehiculo vistaVehiculo in contenido)
             {
-                Console.WriteLine();
-                contador = 0;
+                vistaVehiculo.Dibuja();
+                contador++;
+                if (contador == 3)
+                {
+                    Console.WriteLine();
+                    contador = 0;
+                }
+                else
+                    Console.Write(" ");
             }
-            else
-                Console.Write(" ");
-        }
-        if (contador != 0)
+            if (contador != 0)
+                Console.WriteLine();
             Console.WriteLine();
-        Console.WriteLine();
+        }
     }
 }

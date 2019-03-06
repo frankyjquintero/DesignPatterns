@@ -1,20 +1,21 @@
-using System;
-
-public class Usuario
+namespace DesignPatterns.Iterator
 {
-    static void Main(string[] args)
+    public static class Usuario
     {
-        CatalogoVehiculo catalogo = new CatalogoVehiculo();
-        IteradorVehiculo iterador = catalogo.busqueda(
-          "económico");
-        Vehiculo vehiculo;
-        iterador.inicio();
-        vehiculo = iterador.item();
-        while (vehiculo != null)
+        static void Main(string[] args)
         {
-            vehiculo.visualiza();
-            iterador.siguiente();
-            vehiculo = iterador.item();
+            CatalogoVehiculo catalogo = new CatalogoVehiculo();
+            IteradorVehiculo iterador = catalogo.Busqueda(
+                "económico");
+            Vehiculo vehiculo;
+            iterador.Inicio();
+            vehiculo = iterador.Item();
+            while (vehiculo != null)
+            {
+                vehiculo.Visualiza();
+                iterador.Siguiente();
+                vehiculo = iterador.Item();
+            }
         }
     }
 }

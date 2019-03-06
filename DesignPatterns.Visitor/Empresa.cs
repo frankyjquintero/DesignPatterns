@@ -1,19 +1,20 @@
-using System;
-
-public abstract class Empresa
+namespace DesignPatterns.Visitor
 {
-    public string nombre { get; protected set; }
-    public string email { get; protected set; }
-    public string direccion { get; protected set; }
-
-    public Empresa(string nombre, string email, string direccion)
+    public abstract class Empresa
     {
-        this.nombre = nombre;
-        this.email = email;
-        this.direccion = direccion;
+        public string Nombre { get; protected set; }
+        public string Email { get; protected set; }
+        public string Direccion { get; protected set; }
+
+        public Empresa(string nombre, string email, string direccion)
+        {
+            this.Nombre = nombre;
+            this.Email = email;
+            this.Direccion = direccion;
+        }
+
+        public abstract bool AgregaFilial(Empresa filial);
+
+        public abstract void AceptaVisitante(IVisitante visitante);
     }
-
-    public abstract bool agregaFilial(Empresa filial);
-
-    public abstract void aceptaVisitante(Visitante visitante);
 }

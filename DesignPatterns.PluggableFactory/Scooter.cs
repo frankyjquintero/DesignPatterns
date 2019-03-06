@@ -1,18 +1,19 @@
-﻿using System;
-
-public abstract class Scooter
+﻿namespace DesignPatterns.PluggableFactory
 {
-    public string modelo { get; set; }
-    public string color { get; set; }
-    protected int potencia { get; set; }
-
-    public Scooter duplica()
+    public abstract class Scooter
     {
-        Scooter resultado;
-        resultado = (Scooter)this.MemberwiseClone();
-        return resultado;
-    }
+        public string Modelo { get; set; }
+        public string Color { get; set; }
+        protected int Potencia { get; set; }
 
-    public abstract void visualizaCaracteristicas();
+        public Scooter Duplica()
+        {
+            Scooter resultado;
+            resultado = (Scooter)this.MemberwiseClone();
+            return resultado;
+        }
+
+        public abstract void VisualizaCaracteristicas();
+    }
 }
 

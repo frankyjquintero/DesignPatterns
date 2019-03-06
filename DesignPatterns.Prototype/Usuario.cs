@@ -1,20 +1,23 @@
 using System;
 
-public class Usuario
+namespace DesignPatterns.Prototype
 {
-    static void Main(string[] args)
+    public class Usuario
     {
-        DocumentacionEnBlanco documentacionEnBlanco = DocumentacionEnBlanco.Instance();
-        documentacionEnBlanco.incluye(new OrdenDePedido());
-        documentacionEnBlanco.incluye(new CertificadoCesion());
-        documentacionEnBlanco.incluye(new SolicitudMatriculacion());
-        // creación de documentación nueva para dos clientes
-        DocumentacionCliente documentacionCliente1 = new DocumentacionCliente(
-        "Martín");
-        DocumentacionCliente documentacionCliente2 = new DocumentacionCliente(
-        "Simón");
-        documentacionCliente1.visualiza();
-        documentacionCliente2.visualiza();
-        Console.ReadKey();
+        static void Main(string[] args)
+        {
+            DocumentacionEnBlanco documentacionEnBlanco = DocumentacionEnBlanco.Instance();
+            documentacionEnBlanco.Incluye(new OrdenDePedido());
+            documentacionEnBlanco.Incluye(new CertificadoCesion());
+            documentacionEnBlanco.Incluye(new SolicitudMatriculacion());
+            // creación de documentación nueva para dos clientes
+            DocumentacionCliente documentacionCliente1 = new DocumentacionCliente(
+                "Martín");
+            DocumentacionCliente documentacionCliente2 = new DocumentacionCliente(
+                "Simón");
+            documentacionCliente1.Visualiza();
+            documentacionCliente2.Visualiza();
+            Console.ReadKey();
+        }
     }
 }

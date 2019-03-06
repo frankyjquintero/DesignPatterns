@@ -1,10 +1,13 @@
-﻿public class MensajeComercial : MensajeAbstracto
+﻿namespace DesignPatterns.Multicast
 {
-    public string contenido { get; protected set; }
-
-    public MensajeComercial(string contenido)
+    public class MensajeComercial : MensajeAbstracto
     {
-        this.contenido = contenido;
+        public string Contenido { get; protected set; }
+
+        public MensajeComercial(string contenido)
+        {
+            this.Contenido = contenido;
+        }
     }
 }
 

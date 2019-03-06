@@ -1,6 +1,7 @@
-using System;
-
-public interface GestionDocumento
+namespace DesignPatterns.Facade
 {
-  string documento(int indice);
+    public interface IGestionDocumento
+    {
+        string Documento(int indice);
+    }
 }

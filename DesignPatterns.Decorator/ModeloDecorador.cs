@@ -1,19 +1,22 @@
 using System;
 
-public class ModeloDecorador : Decorador
+namespace DesignPatterns.Decorator
 {
-    public ModeloDecorador(ComponenteGraficoVehiculo
-    componente)
-        : base(componente) { }
-
-    protected void visualizaInformacionTecnica()
+    public class ModeloDecorador : Decorador
     {
-        Console.WriteLine("Información técnica del modelo");
-    }
+        public ModeloDecorador(IComponenteGraficoVehiculo
+            componente)
+            : base(componente) { }
 
-    public override void visualiza()
-    {
-        base.visualiza();
-        this.visualizaInformacionTecnica();
+        protected void VisualizaInformacionTecnica()
+        {
+            Console.WriteLine("Información técnica del modelo");
+        }
+
+        public override void Visualiza()
+        {
+            base.Visualiza();
+            this.VisualizaInformacionTecnica();
+        }
     }
 }

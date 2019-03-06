@@ -1,30 +1,31 @@
-using System;
-
-public class OperadorY : OperadorBinario
+namespace DesignPatterns.Interpreter
 {
-    public OperadorY(Expresion operandoIzquierdo,
-    Expresion operandoDerecho)
-        : base(operandoIzquierdo,
-    operandoDerecho) { }
-
-    public override bool evalua(string descripcion)
+    public class OperadorY : OperadorBinario
     {
-        return operandoIzquierdo.evalua(descripcion) &&
-        operandoDerecho.evalua(descripcion);
-    }
+        public OperadorY(Expresion operandoIzquierdo,
+            Expresion operandoDerecho)
+            : base(operandoIzquierdo,
+                operandoDerecho) { }
 
-    // partie analyse syntaxique
-    public static new Expresion parsea()
-    {
-        Expresion resultadoIzquierdo, resultadoDerecho;
-        resultadoIzquierdo = Expresion.parsea();
-        while ((pieza != null) && (pieza == "y"))
+        public override bool Evalua(string descripcion)
         {
-            siguientePieza();
-            resultadoDerecho = Expresion.parsea();
-            resultadoIzquierdo = new OperadorY(resultadoIzquierdo,
-              resultadoDerecho);
+            return operandoIzquierdo.Evalua(descripcion) &&
+                   operandoDerecho.Evalua(descripcion);
         }
-        return resultadoIzquierdo;
+
+        // partie analyse syntaxique
+        public static new Expresion Parsea()
+        {
+            Expresion resultadoIzquierdo, resultadoDerecho;
+            resultadoIzquierdo = Expresion.Parsea();
+            while ((pieza != null) && (pieza == "y"))
+            {
+                SiguientePieza();
+                resultadoDerecho = Expresion.Parsea();
+                resultadoIzquierdo = new OperadorY(resultadoIzquierdo,
+                    resultadoDerecho);
+            }
+            return resultadoIzquierdo;
+        }
     }
 }

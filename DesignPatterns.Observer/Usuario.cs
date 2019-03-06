@@ -1,16 +1,20 @@
 using System;
 
-public class Usuario
+namespace DesignPatterns.Observer
 {
-    static void Main(string[] args)
+    public static class Usuario
     {
-        Vehiculo vehiculo = new Vehiculo();
-        vehiculo.descripcion = "Vehículo económico";
-        vehiculo.precio = 5000.0;
-        VistaVehiculo vistaVehiculo = new VistaVehiculo(vehiculo);
-        vistaVehiculo.redibuja();
-        vehiculo.precio = 4500.0;
-        VistaVehiculo vistaVehiculo2 = new VistaVehiculo(vehiculo);
-        vehiculo.precio = 5500.0;
+        static void Main(string[] args)
+        {
+            Vehiculo vehiculo = new Vehiculo();
+            vehiculo.Descripcion = "Vehículo económico";
+            vehiculo.Precio = 5000.0;
+            VistaVehiculo vistaVehiculo = new VistaVehiculo(vehiculo);
+            vistaVehiculo.Redibuja();
+            vehiculo.Precio = 4500.0;
+            VistaVehiculo vistaVehiculo2 = new VistaVehiculo(vehiculo);
+            vehiculo.Precio = 5500.0;
+            Console.ReadKey();
+        }
     }
 }

@@ -1,19 +1,20 @@
-using System;
-
-public class Vehiculo : ObjetoBasico
+namespace DesignPatterns.ChainOfResponsibility
 {
-    protected string laDescripcion;
-
-    public Vehiculo(string descripcion)
+    public class Vehiculo : ObjetoBasico
     {
-        this.laDescripcion = descripcion;
-    }
+        protected string laDescripcion;
 
-    protected override string descripcion
-    {
-        get
+        public Vehiculo(string descripcion)
         {
-            return laDescripcion;
+            this.laDescripcion = descripcion;
+        }
+
+        protected override string Descripcion
+        {
+            get
+            {
+                return laDescripcion;
+            }
         }
     }
 }

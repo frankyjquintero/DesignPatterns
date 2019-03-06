@@ -1,18 +1,20 @@
-using System;
 using System.Collections.Generic;
 
-public abstract class Catalogo<TElemento, TIterador>
-    where TElemento : Elemento
-    where TIterador : Iterador<TElemento>, new()
+namespace DesignPatterns.Iterator
 {
-    protected IList<TElemento> contenido =
-      new List<TElemento>();
-
-    public TIterador busqueda(string palabraClaveConsulta)
+    public abstract class Catalogo<TElemento, TIterador>
+        where TElemento : Elemento
+        where TIterador : Iterador<TElemento>, new()
     {
-        TIterador resultado = new TIterador();
-        resultado.palabraClaveConsulta = palabraClaveConsulta;
-        resultado.contenido = contenido;
-        return resultado;
+        protected IList<TElemento> contenido =
+            new List<TElemento>();
+
+        public TIterador Busqueda(string palabraClaveConsulta)
+        {
+            TIterador resultado = new TIterador();
+            resultado.PalabraClaveConsulta = palabraClaveConsulta;
+            resultado.Contenido = contenido;
+            return resultado;
+        }
     }
 }

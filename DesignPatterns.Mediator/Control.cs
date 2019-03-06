@@ -1,21 +1,22 @@
-using System;
-
-public abstract class Control
+namespace DesignPatterns.Mediator
 {
-    public string valor { get; protected set; }
-    public Formulario director { get; set; }
-    public string nombre { get; protected set; }
-
-    public Control(string nombre)
+    public abstract class Control
     {
-        this.valor = "";
-        this.nombre = nombre;
-    }
+        public string Valor { get; protected set; }
+        public Formulario Director { get; set; }
+        public string Nombre { get; protected set; }
 
-    public abstract void informa();
+        public Control(string nombre)
+        {
+            this.Valor = "";
+            this.Nombre = nombre;
+        }
 
-    protected void modifica()
-    {
-        director.controlModificado(this);
+        public abstract void Informa();
+
+        protected void Modifica()
+        {
+            Director.ControlModificado(this);
+        }
     }
 }

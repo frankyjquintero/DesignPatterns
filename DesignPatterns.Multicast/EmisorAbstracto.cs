@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-public abstract class EmisorAbstracto
- <TMensaje, TReceptor>
-    where TMensaje : MensajeAbstracto
-    where TReceptor : ReceptorAbstracto<TMensaje>
+namespace DesignPatterns.Multicast
 {
-    protected IList<TReceptor> registro =
-  new List<TReceptor>();
-
-    public void agrega(TReceptor receptor)
+    public abstract class EmisorAbstracto
+        <TMensaje, TReceptor>
+        where TMensaje : MensajeAbstracto
+        where TReceptor : IReceptorAbstracto<TMensaje>
     {
-        registro.Add(receptor);
-    }
+        protected IList<TReceptor> registro =
+            new List<TReceptor>();
 
-    public void envioMultiple(TMensaje mensaje)
-    {
-        foreach (TReceptor receptor in registro)
-            receptor.recibe(mensaje);
+        public void Agrega(TReceptor receptor)
+        {
+            registro.Add(receptor);
+        }
+
+        public void EnvioMultiple(TMensaje mensaje)
+        {
+            foreach (TReceptor receptor in registro)
+                receptor.Recibe(mensaje);
+        }
     }
 }
 

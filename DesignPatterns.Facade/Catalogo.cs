@@ -1,8 +1,10 @@
-using System;
 using System.Collections.Generic;
 
-public interface Catalogo
+namespace DesignPatterns.Facade
 {
-    IList<string> buscaVehiculos(int precioMin, int
-      precioMax);
+    public interface ICatalogo
+    {
+        IList<string> BuscaVehiculos(int precioMin, int
+            precioMax);
+    }
 }

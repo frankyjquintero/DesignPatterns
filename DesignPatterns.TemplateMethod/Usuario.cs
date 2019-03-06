@@ -1,17 +1,22 @@
 using System;
-public class Usuario
+
+namespace DesignPatterns.TemplateMethod
 {
-    static void Main(string[] args)
+    public static class Usuario
     {
-        Pedido pedidoEspaña = new PedidoEspaña();
-        pedidoEspaña.setImporteSinIVA(10000);
-        pedidoEspaña.calculaPrecioConIVA();
-        pedidoEspaña.visualiza();
+        static void Main(string[] args)
+        {
+            Pedido pedidoEspaña = new PedidoEspaña();
+            pedidoEspaña.SetImporteSinIva(10000);
+            pedidoEspaña.CalculaPrecioConIva();
+            pedidoEspaña.Visualiza();
 
 
-        Pedido pedidoLuxemburgo = new PedidoLuxemburgo();
-        pedidoLuxemburgo.setImporteSinIVA(10000);
-        pedidoLuxemburgo.calculaPrecioConIVA();
-        pedidoLuxemburgo.visualiza();
+            Pedido pedidoLuxemburgo = new PedidoLuxemburgo();
+            pedidoLuxemburgo.SetImporteSinIva(10000);
+            pedidoLuxemburgo.CalculaPrecioConIva();
+            pedidoLuxemburgo.Visualiza();
+            Console.ReadKey();
+        }
     }
 }

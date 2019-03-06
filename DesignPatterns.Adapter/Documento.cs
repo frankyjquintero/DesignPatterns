@@ -1,7 +1,10 @@
-public interface IDocumento
+namespace DesignPatterns.Adapter
 {
-    string Contenido { set; }
-    void Dibuja();
-    void Imprime();
+    public interface IDocumento
+    {
+        string Contenido { set; }
+        void Dibuja();
+        void Imprime();
 
+    }
 }

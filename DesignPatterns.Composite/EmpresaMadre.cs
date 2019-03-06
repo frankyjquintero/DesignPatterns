@@ -1,22 +1,27 @@
-using System;
 using System.Collections.Generic;
 
-public class EmpresaMadre : Empresa
+namespace DesignPatterns.Composite
 {
-    protected IList<Empresa> filiales =
-      new List<Empresa>();
-
-    public override bool agregaFilial(Empresa filial)
+    public class EmpresaMadre : Empresa
     {
-        filiales.Add(filial);
-        return true;
-    }
+        protected IList<Empresa> filiales =
+            new List<Empresa>();
 
-    public override double calculaCosteMantenimiento()
-    {
-        double cout = 0.0;
-        foreach (Empresa filial in filiales)
-            cout = cout + filial.calculaCosteMantenimiento();
-        return cout + nVehiculos * costeUnitarioVehiculo;
+        public override bool AgregaFilial(Empresa filial)
+        {
+            filiales.Add(filial);
+            return true;
+        }
+
+        public override double CalculaCosteMantenimiento()
+        {
+            double cout = 0.0;
+            foreach (Empresa filial in filiales)
+            {
+                cout = cout + filial.CalculaCosteMantenimiento();
+            }
+
+            return cout + nVehiculos * costeUnitarioVehiculo;
+        }
     }
 }

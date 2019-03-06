@@ -1,24 +1,27 @@
 using System;
 
-public class OpcionVehiculo
+namespace DesignPatterns.Flyweight
 {
-    protected string nombre;
-    protected string descripcion;
-    protected int precioEstandar;
-
-    public OpcionVehiculo(string nombre)
+    public class OpcionVehiculo
     {
-        this.nombre = nombre;
-        this.descripcion = "Descripción de " + nombre;
-        this.precioEstandar = 100;
-    }
+        protected string nombre;
+        protected string descripcion;
+        protected int precioEstandar;
 
-    public void visualiza(int precioDeVenta)
-    {
-        Console.WriteLine("Opción");
-        Console.WriteLine("Nombre: " + nombre);
-        Console.WriteLine(descripcion);
-        Console.WriteLine("Precio estándar: " + precioEstandar);
-        Console.WriteLine("Precio de venta: " + precioDeVenta);
+        public OpcionVehiculo(string nombre)
+        {
+            this.nombre = nombre;
+            this.descripcion = "Descripción de " + nombre;
+            this.precioEstandar = 100;
+        }
+
+        public void Visualiza(int precioDeVenta)
+        {
+            Console.WriteLine("Opción");
+            Console.WriteLine("Nombre: " + nombre);
+            Console.WriteLine(descripcion);
+            Console.WriteLine("Precio estándar: " + precioEstandar);
+            Console.WriteLine("Precio de venta: " + precioDeVenta);
+        }
     }
 }

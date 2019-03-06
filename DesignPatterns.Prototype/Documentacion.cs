@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 
-public abstract class Documentacion
+namespace DesignPatterns.Prototype
 {
-    public IList<Documento> documentos { get; protected set; }
+    public abstract class Documentacion
+    {
+        public IList<Documento> Documentos { get; protected set; }
+    }
 }

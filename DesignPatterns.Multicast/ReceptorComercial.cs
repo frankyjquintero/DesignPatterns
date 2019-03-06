@@ -1,5 +1,8 @@
-﻿public interface ReceptorComercial :
- ReceptorAbstracto<MensajeComercial>
+﻿namespace DesignPatterns.Multicast
 {
+    public interface IReceptorComercial :
+        IReceptorAbstracto<MensajeComercial>
+    {
+    }
 }
 

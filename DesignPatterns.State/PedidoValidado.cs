@@ -1,20 +1,23 @@
-public class PedidoValidado : EstadoPedido
+namespace DesignPatterns.State
 {
-    public PedidoValidado(Pedido pedido)
-        : base
-    (pedido) { }
-
-    public override void agregaProducto(Producto producto) { }
-
-    public override void borra()
+    public class PedidoValidado : EstadoPedido
     {
-        pedido.Productos.Clear();
-    }
+        public PedidoValidado(Pedido pedido)
+            : base
+                (pedido) { }
 
-    public override void suprimeProducto(Producto producto) { }
+        public override void AgregaProducto(Producto producto) { }
 
-    public override EstadoPedido estadoSiguiente()
-    {
-        return new PedidoEntregado(pedido);
+        public override void Borra()
+        {
+            pedido.Productos.Clear();
+        }
+
+        public override void SuprimeProducto(Producto producto) { }
+
+        public override EstadoPedido EstadoSiguiente()
+        {
+            return new PedidoEntregado(pedido);
+        }
     }
 }

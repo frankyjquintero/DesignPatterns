@@ -1,13 +1,16 @@
 using System;
 
-public class Vehiculo : Elemento
+namespace DesignPatterns.Iterator
 {
-
-    public Vehiculo(string descripcion) : base(descripcion) { }
-
-    public void visualiza()
+    public class Vehiculo : Elemento
     {
-        Console.WriteLine("Descripción del vehículo: " +
-          descripcion);
+
+        public Vehiculo(string descripcion) : base(descripcion) { }
+
+        public void Visualiza()
+        {
+            Console.WriteLine("Descripción del vehículo: " +
+                              descripcion);
+        }
     }
 }

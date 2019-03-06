@@ -1,23 +1,26 @@
 using System.Collections.Generic;
 
-public abstract class Sujeto
+namespace DesignPatterns.Observer
 {
-    protected IList<Observador> observadores =
-        new List<Observador>();
-
-    public void agrega(Observador observador)
+    public abstract class Sujeto
     {
-        observadores.Add(observador);
-    }
+        protected IList<IObservador> observadores =
+            new List<IObservador>();
 
-    public void suprime(Observador observador)
-    {
-        observadores.Remove(observador);
-    }
+        public void Agrega(IObservador observador)
+        {
+            observadores.Add(observador);
+        }
 
-    public void notifica()
-    {
-        foreach (Observador observador in observadores)
-            observador.actualiza();
+        public void Suprime(IObservador observador)
+        {
+            observadores.Remove(observador);
+        }
+
+        public void Notifica()
+        {
+            foreach (IObservador observador in observadores)
+                observador.Actualiza();
+        }
     }
 }

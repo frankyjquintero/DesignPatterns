@@ -1,31 +1,34 @@
 using System;
 
-public class VistaVehiculo : Observador
+namespace DesignPatterns.Observer
 {
-    protected Vehiculo vehiculo;
-    protected string texto = "";
-
-    public VistaVehiculo(Vehiculo vehiculo)
+    public class VistaVehiculo : IObservador
     {
-        this.vehiculo = vehiculo;
-        vehiculo.agrega(this);
-        actualizaTexto();
-    }
+        protected Vehiculo vehiculo;
+        protected string texto = "";
 
-    protected void actualizaTexto()
-    {
-        texto = "Descripción " + vehiculo.descripcion +
-        " Precio: " + vehiculo.precio;
-    }
+        public VistaVehiculo(Vehiculo vehiculo)
+        {
+            this.vehiculo = vehiculo;
+            vehiculo.Agrega(this);
+            ActualizaTexto();
+        }
 
-    public void actualiza()
-    {
-        actualizaTexto();
-        this.redibuja();
-    }
+        protected void ActualizaTexto()
+        {
+            texto = "Descripción " + vehiculo.Descripcion +
+                    " Precio: " + vehiculo.Precio;
+        }
 
-    public void redibuja()
-    {
-        Console.WriteLine(texto);
+        public void Actualiza()
+        {
+            ActualizaTexto();
+            this.Redibuja();
+        }
+
+        public void Redibuja()
+        {
+            Console.WriteLine(texto);
+        }
     }
 }

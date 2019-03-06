@@ -1,17 +1,18 @@
-using System;
-
-public abstract class ConstructorDocumentacionVehiculo
+namespace DesignPatterns.Builder
 {
-    protected Documentacion documentacion;
-
-    public abstract void construyeSolicitudPedido(string
-      nombreCliente);
-
-    public abstract void construyeSolicitudMatriculacion
-      (string nombreSolicitante);
-
-    public Documentacion resultado()
+    public abstract class ConstructorDocumentacionVehiculo
     {
-        return documentacion;
+        protected Documentacion documentacion;
+
+        public abstract void ConstruyeSolicitudPedido(string
+            nombreCliente);
+
+        public abstract void ConstruyeSolicitudMatriculacion
+            (string nombreSolicitante);
+
+        public Documentacion Resultado()
+        {
+            return documentacion;
+        }
     }
 }

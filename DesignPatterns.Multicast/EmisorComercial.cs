@@ -1,6 +1,9 @@
-﻿public class EmisorComercial :
-  EmisorAbstracto<MensajeComercial,
-   ReceptorComercial>
+﻿namespace DesignPatterns.Multicast
 {
+    public class EmisorComercial :
+        EmisorAbstracto<MensajeComercial,
+            IReceptorComercial>
+    {
+    }
 }
 

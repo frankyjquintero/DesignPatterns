@@ -1,21 +1,22 @@
-using System;
-
-public abstract class Documento
+namespace DesignPatterns.Prototype
 {
-    protected string contenido = "";
-
-    public Documento duplica()
+    public abstract class Documento
     {
-        Documento resultado;
-        resultado = (Documento)this.MemberwiseClone();
-        return resultado;
-    }
+        protected string contenido = "";
 
-    public void rellena(string informacion)
-    {
-        contenido = informacion;
-    }
+        public Documento Duplica()
+        {
+            Documento resultado;
+            resultado = (Documento)this.MemberwiseClone();
+            return resultado;
+        }
 
-    public abstract void imprime();
-    public abstract void visualiza();
+        public void Rellena(string informacion)
+        {
+            contenido = informacion;
+        }
+
+        public abstract void Imprime();
+        public abstract void Visualiza();
+    }
 }

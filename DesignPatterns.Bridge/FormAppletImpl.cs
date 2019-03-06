@@ -1,15 +1,18 @@
 using System;
 
-public class FormAppletImpl : IFormularioImpl
+namespace DesignPatterns.Bridge
 {
-
-    public void DibujaTexto(string texto)
+    public class FormAppletImpl : IFormularioImpl
     {
-        Console.WriteLine("Applet: " + texto);
-    }
 
-    public string AdministraZonaIndicada()
-    {
-        return Console.ReadLine();
+        public void DibujaTexto(string texto)
+        {
+            Console.WriteLine("Applet: " + texto);
+        }
+
+        public string AdministraZonaIndicada()
+        {
+            return Console.ReadLine();
+        }
     }
 }

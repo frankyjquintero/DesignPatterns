@@ -1,7 +1,10 @@
-public class PedidoEspaña : Pedido
+namespace DesignPatterns.TemplateMethod
 {
-    protected override void calculaIVA()
+    public class PedidoEspaña : Pedido
     {
-        importeIVA = importeSinIVA * 0.18;
+        protected override void CalculaIva()
+        {
+            importeIva = importeSinIva * 0.18;
+        }
     }
 }

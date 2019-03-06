@@ -1,36 +1,39 @@
 using System.Collections.Generic;
 
-public class Catalogo
+namespace DesignPatterns.Command
 {
-    protected IList<Vehiculo> vehiculosStock =
-        new List<Vehiculo>();
-    protected IList<SolicitudRebaja> solicitudes =
-        new List<SolicitudRebaja>();
-
-    public void ejecutaSolicitudRebaja(SolicitudRebaja solicitud)
+    public class Catalogo
     {
-        solicitudes.Insert(0, solicitud);
-        solicitud.rebaja(vehiculosStock);
-    }
+        protected IList<Vehiculo> vehiculosStock =
+            new List<Vehiculo>();
+        protected IList<SolicitudRebaja> solicitudes =
+            new List<SolicitudRebaja>();
 
-    public void anulaSolicitudRebaja(int orden)
-    {
-        solicitudes[orden].anula();
-    }
+        public void EjecutaSolicitudRebaja(SolicitudRebaja solicitud)
+        {
+            solicitudes.Insert(0, solicitud);
+            solicitud.Rebaja(vehiculosStock);
+        }
 
-    public void restableceSolicitudRebaja(int orden)
-    {
-        solicitudes[orden].restablece();
-    }
+        public void AnulaSolicitudRebaja(int orden)
+        {
+            solicitudes[orden].Anula();
+        }
 
-    public void agrega(Vehiculo vehiculo)
-    {
-        vehiculosStock.Add(vehiculo);
-    }
+        public void RestableceSolicitudRebaja(int orden)
+        {
+            solicitudes[orden].Restablece();
+        }
 
-    public void visualiza()
-    {
-        foreach (Vehiculo vehiculo in vehiculosStock)
-            vehiculo.visualiza();
+        public void Agrega(Vehiculo vehiculo)
+        {
+            vehiculosStock.Add(vehiculo);
+        }
+
+        public void Visualiza()
+        {
+            foreach (Vehiculo vehiculo in vehiculosStock)
+                vehiculo.Visualiza();
+        }
     }
 }

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 
-public interface DibujaCatalogo
+namespace DesignPatterns.Strategy
 {
-    void dibuja(IList<VistaVehiculo> contenido);
+    public interface IDibujaCatalogo
+    {
+        void Dibuja(IList<VistaVehiculo> contenido);
+    }
 }

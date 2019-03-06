@@ -1,48 +1,51 @@
 using System;
 using System.Collections.Generic;
 
-public class Pedido
+namespace DesignPatterns.State
 {
-    protected IList<Producto> productos = new List<Producto>();
-    public IList<Producto> Productos
+    public class Pedido
     {
-        get
+        protected IList<Producto> productos = new List<Producto>();
+        public IList<Producto> Productos
         {
-            return productos;
+            get
+            {
+                return productos;
+            }
         }
-    }
-    protected EstadoPedido estadoPedido;
+        protected EstadoPedido estadoPedido;
 
-    public Pedido()
-    {
-        estadoPedido = new PedidoEnCurso(this);
-    }
+        public Pedido()
+        {
+            estadoPedido = new PedidoEnCurso(this);
+        }
 
-    public void agregaProducto(Producto producto)
-    {
-        estadoPedido.agregaProducto(producto);
-    }
+        public void AgregaProducto(Producto producto)
+        {
+            estadoPedido.AgregaProducto(producto);
+        }
 
-    public void suprimeProducto(Producto producto)
-    {
-        estadoPedido.suprimeProducto(producto);
-    }
+        public void SuprimeProducto(Producto producto)
+        {
+            estadoPedido.SuprimeProducto(producto);
+        }
 
-    public void borra()
-    {
-        estadoPedido.borra();
-    }
+        public void Borra()
+        {
+            estadoPedido.Borra();
+        }
 
-    public void estadoSiguiente()
-    {
-        estadoPedido = estadoPedido.estadoSiguiente();
-    }
+        public void EstadoSiguiente()
+        {
+            estadoPedido = estadoPedido.EstadoSiguiente();
+        }
 
-    public void visualiza()
-    {
-        Console.WriteLine("Contenido del pedido");
-        foreach (Producto producto in productos)
-            producto.visualiza();
-        Console.WriteLine();
+        public void Visualiza()
+        {
+            Console.WriteLine("Contenido del pedido");
+            foreach (Producto producto in productos)
+                producto.Visualiza();
+            Console.WriteLine();
+        }
     }
 }

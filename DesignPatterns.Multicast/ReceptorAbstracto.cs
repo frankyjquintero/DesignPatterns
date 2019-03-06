@@ -1,6 +1,9 @@
-﻿public interface ReceptorAbstracto<TMensaje>
- where TMensaje : MensajeAbstracto
+﻿namespace DesignPatterns.Multicast
 {
-    void recibe(TMensaje mensaje);
+    public interface IReceptorAbstracto<TMensaje>
+        where TMensaje : MensajeAbstracto
+    {
+        void Recibe(TMensaje mensaje);
+    }
 }
 

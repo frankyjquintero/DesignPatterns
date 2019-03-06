@@ -1,16 +1,17 @@
-using System;
-
-public abstract class Empresa
+namespace DesignPatterns.Composite
 {
-    protected static double costeUnitarioVehiculo = 5.0;
-    protected int nVehiculos;
-
-    public void agregaVehiculo()
+    public abstract class Empresa
     {
-        nVehiculos = nVehiculos + 1;
+        protected static double costeUnitarioVehiculo = 5.0;
+        protected int nVehiculos;
+
+        public void AgregaVehiculo()
+        {
+            nVehiculos = nVehiculos + 1;
+        }
+
+        public abstract double CalculaCosteMantenimiento();
+
+        public abstract bool AgregaFilial(Empresa filial);
     }
-
-    public abstract double calculaCosteMantenimiento();
-
-    public abstract bool agregaFilial(Empresa filial);
 }

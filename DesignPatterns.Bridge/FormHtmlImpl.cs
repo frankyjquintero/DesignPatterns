@@ -1,15 +1,18 @@
 using System;
 
-public class FormHtmlImpl : IFormularioImpl
+namespace DesignPatterns.Bridge
 {
-
-    public void DibujaTexto(string texto)
+    public class FormHtmlImpl : IFormularioImpl
     {
-        Console.WriteLine("HTML: " + texto);
-    }
 
-    public string AdministraZonaIndicada()
-    {
-        return Console.ReadLine();
+        public void DibujaTexto(string texto)
+        {
+            Console.WriteLine("HTML: " + texto);
+        }
+
+        public string AdministraZonaIndicada()
+        {
+            return Console.ReadLine();
+        }
     }
 }

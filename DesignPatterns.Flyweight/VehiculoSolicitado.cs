@@ -1,29 +1,32 @@
 using System;
 using System.Collections.Generic;
 
-public class VehiculoSolicitado
+namespace DesignPatterns.Flyweight
 {
-    protected IList<OpcionVehiculo> opciones =
-        new List<OpcionVehiculo>();
-    protected IList<int> precioDeVentaOpciones =
-        new List<int>();
-
-    public void agregaOpciones(string nombre, int precioDeVenta,
-      FabricaOpcion fabrica)
+    public class VehiculoSolicitado
     {
-        opciones.Add(fabrica.getOption(nombre));
-        precioDeVentaOpciones.Add(precioDeVenta);
-    }
+        protected IList<OpcionVehiculo> opciones =
+            new List<OpcionVehiculo>();
+        protected IList<int> precioDeVentaOpciones =
+            new List<int>();
 
-    public void muestraOpciones()
-    {
-        int indice, tamaño;
-        tamaño = opciones.Count;
-        for (indice = 0; indice < tamaño; indice++)
+        public void AgregaOpciones(string nombre, int precioDeVenta,
+            FabricaOpcion fabrica)
         {
-            opciones[indice].visualiza(
-            precioDeVentaOpciones[indice]);
-            Console.WriteLine();
+            opciones.Add(fabrica.GetOption(nombre));
+            precioDeVentaOpciones.Add(precioDeVenta);
+        }
+
+        public void MuestraOpciones()
+        {
+            int indice, tamaño;
+            tamaño = opciones.Count;
+            for (indice = 0; indice < tamaño; indice++)
+            {
+                opciones[indice].Visualiza(
+                    precioDeVentaOpciones[indice]);
+                Console.WriteLine();
+            }
         }
     }
 }

@@ -1,11 +1,14 @@
-public class CatalogoVehiculo : Catalogo<Vehiculo,
-  IteradorVehiculo>
+namespace DesignPatterns.Iterator
 {
-
-    public CatalogoVehiculo()
+    public class CatalogoVehiculo : Catalogo<Vehiculo,
+        IteradorVehiculo>
     {
-        contenido.Add(new Vehiculo("vehículo económino"));
-        contenido.Add(new Vehiculo("pequeño vehículo económico"));
-        contenido.Add(new Vehiculo("vehículo de gran calidad"));
+
+        public CatalogoVehiculo()
+        {
+            contenido.Add(new Vehiculo("vehículo económino"));
+            contenido.Add(new Vehiculo("pequeño vehículo económico"));
+            contenido.Add(new Vehiculo("vehículo de gran calidad"));
+        }
     }
 }

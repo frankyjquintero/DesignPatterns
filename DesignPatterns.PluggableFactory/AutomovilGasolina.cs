@@ -1,14 +1,17 @@
 ﻿using System;
 
-public class AutomovilGasolina : Automovil
+namespace DesignPatterns.PluggableFactory
 {
-
-    public override void visualizaCaracteristicas()
+    public class AutomovilGasolina : Automovil
     {
-        Console.WriteLine(
-         "Automóvil de gasolina de modelo: " + modelo +
-         " de color: " + color + " de potencia: " +
-         potencia + " de espacio: " + espacio);
+
+        public override void VisualizaCaracteristicas()
+        {
+            Console.WriteLine(
+                "Automóvil de gasolina de modelo: " + Modelo +
+                " de color: " + Color + " de potencia: " +
+                Potencia + " de espacio: " + Espacio);
+        }
     }
 }
 

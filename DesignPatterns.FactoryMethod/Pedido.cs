@@ -1,15 +1,16 @@
-using System;
-
-public abstract class Pedido
+namespace DesignPatterns.FactoryMethod
 {
-    protected double importe;
-
-    public Pedido(double importe)
+    public abstract class Pedido
     {
-        this.importe = importe;
+        protected double importe;
+
+        public Pedido(double importe)
+        {
+            this.importe = importe;
+        }
+
+        public abstract bool Valida();
+
+        public abstract void Paga();
     }
-
-    public abstract bool valida();
-
-    public abstract void paga();
 }

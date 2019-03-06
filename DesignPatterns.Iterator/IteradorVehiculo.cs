@@ -1,3 +1,6 @@
-public class IteradorVehiculo : Iterador<Vehiculo>
+namespace DesignPatterns.Iterator
 {
+    public class IteradorVehiculo : Iterador<Vehiculo>
+    {
+    }
 }

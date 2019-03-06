@@ -1,30 +1,33 @@
 using System;
 using System.Collections.Generic;
 
-public class OpcionVehiculo
+namespace DesignPatterns.Memento
 {
-    protected string nombre;
-    public IList<OpcionVehiculo> opcionesIncompatibles
-    { get; protected set; }
-
-    public OpcionVehiculo(string nombre)
+    public class OpcionVehiculo
     {
-        opcionesIncompatibles = new List<OpcionVehiculo>();
-        this.nombre = nombre;
-    }
+        protected string nombre;
+        public IList<OpcionVehiculo> OpcionesIncompatibles
+        { get; protected set; }
 
-    public void agregaOpcionIncompatible(OpcionVehiculo
-      opcionIncompatible)
-    {
-        if (!opcionesIncompatibles.Contains(opcionIncompatible))
+        public OpcionVehiculo(string nombre)
         {
-            opcionesIncompatibles.Add(opcionIncompatible);
-            opcionIncompatible.agregaOpcionIncompatible(this);
+            OpcionesIncompatibles = new List<OpcionVehiculo>();
+            this.nombre = nombre;
         }
-    }
 
-    public void visualiza()
-    {
-        Console.WriteLine("opción: " + nombre);
+        public void AgregaOpcionIncompatible(OpcionVehiculo
+            opcionIncompatible)
+        {
+            if (!OpcionesIncompatibles.Contains(opcionIncompatible))
+            {
+                OpcionesIncompatibles.Add(opcionIncompatible);
+                opcionIncompatible.AgregaOpcionIncompatible(this);
+            }
+        }
+
+        public void Visualiza()
+        {
+            Console.WriteLine("opción: " + nombre);
+        }
     }
 }

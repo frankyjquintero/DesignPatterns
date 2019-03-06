@@ -1,9 +1,12 @@
 using System;
 
-public class VistaVehiculo : ComponenteGraficoVehiculo
+namespace DesignPatterns.Decorator
 {
-    public void visualiza()
+    public class VistaVehiculo : IComponenteGraficoVehiculo
     {
-        Console.WriteLine("Visualización del vehículo");
+        public void Visualiza()
+        {
+            Console.WriteLine("Visualización del vehículo");
+        }
     }
 }

@@ -1,21 +1,24 @@
 using System.Collections.Generic;
 
-public class MementoImpl : Memento
+namespace DesignPatterns.Memento
 {
-    protected IList<OpcionVehiculo> opciones =
-        new List<OpcionVehiculo>();
-
-    public IList<OpcionVehiculo> estado
+    public class MementoImpl : IMemento
     {
-        get
+        protected IList<OpcionVehiculo> opciones =
+            new List<OpcionVehiculo>();
+
+        public IList<OpcionVehiculo> Estado
         {
-            return opciones;
-        }
-        set
-        {
-            this.opciones.Clear();
-            foreach (OpcionVehiculo opcion in value)
-                this.opciones.Add(opcion);
+            get
+            {
+                return opciones;
+            }
+            set
+            {
+                this.opciones.Clear();
+                foreach (OpcionVehiculo opcion in value)
+                    this.opciones.Add(opcion);
+            }
         }
     }
 }

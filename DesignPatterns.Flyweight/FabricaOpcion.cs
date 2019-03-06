@@ -1,20 +1,22 @@
-using System;
 using System.Collections.Generic;
 
-public class FabricaOpcion
+namespace DesignPatterns.Flyweight
 {
-    protected IDictionary<string, OpcionVehiculo> opciones
-    = new Dictionary<string, OpcionVehiculo>();
-    public OpcionVehiculo getOption(string nombre)
+    public class FabricaOpcion
     {
-        OpcionVehiculo resultado;
-        if (opciones.ContainsKey(nombre))
-            resultado = opciones[nombre];
-        else
+        protected IDictionary<string, OpcionVehiculo> opciones
+            = new Dictionary<string, OpcionVehiculo>();
+        public OpcionVehiculo GetOption(string nombre)
         {
-            resultado = new OpcionVehiculo(nombre);
-            opciones.Add(nombre, resultado);
+            OpcionVehiculo resultado;
+            if (opciones.ContainsKey(nombre))
+                resultado = opciones[nombre];
+            else
+            {
+                resultado = new OpcionVehiculo(nombre);
+                opciones.Add(nombre, resultado);
+            }
+            return resultado;
         }
-        return resultado;
     }
 }

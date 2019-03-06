@@ -1,24 +1,25 @@
-﻿using System;
-
-public class DireccionComercial
+﻿namespace DesignPatterns.Multicast
 {
-    protected EmisorComercial emisorComercial =
-     new EmisorComercial();
-
-    public void enviaMensajes()
+    public class DireccionComercial
     {
-        MensajeComercial mensaje = new MensajeComercial(
-         "Anuncio nueva gama");
-        emisorComercial.envioMultiple(mensaje);
-        mensaje = new MensajeComercial(
-         "Anuncio supresión modelo");
-        emisorComercial.envioMultiple(mensaje);
-    }
+        protected EmisorComercial emisorComercial =
+            new EmisorComercial();
 
-    public void agregaReceptorComercial
-     (ReceptorComercial receptor)
-    {
-        emisorComercial.agrega(receptor);
+        public void EnviaMensajes()
+        {
+            MensajeComercial mensaje = new MensajeComercial(
+                "Anuncio nueva gama");
+            emisorComercial.EnvioMultiple(mensaje);
+            mensaje = new MensajeComercial(
+                "Anuncio supresión modelo");
+            emisorComercial.EnvioMultiple(mensaje);
+        }
+
+        public void AgregaReceptorComercial
+            (IReceptorComercial receptor)
+        {
+            emisorComercial.Agrega(receptor);
+        }
     }
 }
 

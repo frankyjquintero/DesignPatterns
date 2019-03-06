@@ -1,20 +1,24 @@
 using System;
 
-public class Usuario
+namespace DesignPatterns.Composite
 {
-    static void Main(string[] args)
+    public static class Usuario
     {
-        Empresa empresa1 = new EmpresaSinFilial();
-        empresa1.agregaVehiculo();
-        Empresa empresa2 = new EmpresaSinFilial();
-        empresa2.agregaVehiculo();
-        empresa2.agregaVehiculo();
-        Empresa grupo = new EmpresaMadre();
-        grupo.agregaFilial(empresa1);
-        grupo.agregaFilial(empresa2);
-        grupo.agregaVehiculo();
-        Console.WriteLine(
-          "Coste de mantenimiento total del grupo: " +
-          grupo.calculaCosteMantenimiento());
+        private static void Main(string[] args)
+        {
+            Empresa empresa1 = new EmpresaSinFilial();
+            empresa1.AgregaVehiculo();
+            Empresa empresa2 = new EmpresaSinFilial();
+            empresa2.AgregaVehiculo();
+            empresa2.AgregaVehiculo();
+            Empresa grupo = new EmpresaMadre();
+            grupo.AgregaFilial(empresa1);
+            grupo.AgregaFilial(empresa2);
+            grupo.AgregaVehiculo();
+            Console.WriteLine(
+                "Coste de mantenimiento total del grupo: " +
+                grupo.CalculaCosteMantenimiento());
+            Console.ReadKey();
+        }
     }
 }

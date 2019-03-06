@@ -1,21 +1,24 @@
 using System;
 
-public class Video : Animacion
+namespace DesignPatterns.Proxy
 {
-    public void clic() { }
-
-    public void dibuja()
+    public class Video : IAnimacion
     {
-        Console.WriteLine("Mostrar el vídeo");
-    }
+        public void Clic() { }
 
-    public void carga()
-    {
-        Console.WriteLine("Cargar el vídeo");
-    }
+        public void Dibuja()
+        {
+            Console.WriteLine("Mostrar el vídeo");
+        }
 
-    public void reproduce()
-    {
-        Console.WriteLine("Reproducir el vídeo");
+        public void Carga()
+        {
+            Console.WriteLine("Cargar el vídeo");
+        }
+
+        public void Reproduce()
+        {
+            Console.WriteLine("Reproducir el vídeo");
+        }
     }
 }

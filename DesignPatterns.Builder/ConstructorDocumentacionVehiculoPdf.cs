@@ -1,29 +1,30 @@
-using System;
-
-public class ConstructorDocumentacionVehiculoPdf :
-  ConstructorDocumentacionVehiculo
+namespace DesignPatterns.Builder
 {
-    public ConstructorDocumentacionVehiculoPdf()
+    public class ConstructorDocumentacionVehiculoPdf :
+        ConstructorDocumentacionVehiculo
     {
-        documentacion = new DocumentacionPdf();
-    }
+        public ConstructorDocumentacionVehiculoPdf()
+        {
+            documentacion = new DocumentacionPdf();
+        }
 
-    public override void construyeSolicitudPedido(string
-      nombreCliente)
-    {
-        string documento;
-        documento = "<PDF>Solicitud de pedido Cliente: " +
-          nombreCliente + "</PDF>";
-        documentacion.agregaDocumento(documento);
-    }
+        public override void ConstruyeSolicitudPedido(string
+            nombreCliente)
+        {
+            string documento;
+            documento = "<PDF>Solicitud de pedido Cliente: " +
+                        nombreCliente + "</PDF>";
+            documentacion.AgregaDocumento(documento);
+        }
 
-    public override void construyeSolicitudMatriculacion
-      (string nombreSolicitante)
-    {
-        string documento;
-        documento =
-        "<PDF>Solicitud de matriculación Solicitante: " +
-        nombreSolicitante + "</PDF>";
-        documentacion.agregaDocumento(documento);
+        public override void ConstruyeSolicitudMatriculacion
+            (string nombreSolicitante)
+        {
+            string documento;
+            documento =
+                "<PDF>Solicitud de matriculación Solicitante: " +
+                nombreSolicitante + "</PDF>";
+            documentacion.AgregaDocumento(documento);
+        }
     }
 }

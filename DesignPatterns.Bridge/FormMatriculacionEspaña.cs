@@ -1,11 +1,14 @@
-public class FormularioMatriculacionEspaña :
-  FormularioMatriculacion
+namespace DesignPatterns.Bridge
 {
-    public FormularioMatriculacionEspaña(IFormularioImpl
-    implementacion) : base(implementacion) { }
-
-    protected override bool ControlZona(string matricula)
+    public class FormularioMatriculacionEspaña :
+        FormularioMatriculacion
     {
-        return matricula.Length == 7;
+        public FormularioMatriculacionEspaña(IFormularioImpl
+            implementacion) : base(implementacion) { }
+
+        protected override bool ControlZona(string matricula)
+        {
+            return matricula.Length == 7;
+        }
     }
 }

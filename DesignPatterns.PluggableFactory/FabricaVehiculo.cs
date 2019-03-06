@@ -1,35 +1,36 @@
-﻿using System;
-
-public class FabricaVehiculo
+﻿namespace DesignPatterns.PluggableFactory
 {
-    public Automovil prototypeAutomovil { get; set; }
-    public Scooter prototypeScooter { get; set; }
-
-    public FabricaVehiculo()
+    public class FabricaVehiculo
     {
-        prototypeAutomovil = null;
-        prototypeScooter = null;
-    }
+        public Automovil PrototypeAutomovil { get; set; }
+        public Scooter PrototypeScooter { get; set; }
 
-    public FabricaVehiculo(Automovil prototypeAutomovil,
-     Scooter prototypeScooter)
-    {
-        this.prototypeAutomovil = prototypeAutomovil;
-        this.prototypeScooter = prototypeScooter;
-    }
+        public FabricaVehiculo()
+        {
+            PrototypeAutomovil = null;
+            PrototypeScooter = null;
+        }
 
-    public Automovil creaAutomovil()
-    {
-        if (prototypeAutomovil == null)
-            return null;
-        return prototypeAutomovil.duplica();
-    }
+        public FabricaVehiculo(Automovil prototypeAutomovil,
+            Scooter prototypeScooter)
+        {
+            this.PrototypeAutomovil = prototypeAutomovil;
+            this.PrototypeScooter = prototypeScooter;
+        }
 
-    public Scooter creaScooter()
-    {
-        if (prototypeScooter == null)
-            return null;
-        return prototypeScooter.duplica();
+        public Automovil CreaAutomovil()
+        {
+            if (PrototypeAutomovil == null)
+                return null;
+            return PrototypeAutomovil.Duplica();
+        }
+
+        public Scooter CreaScooter()
+        {
+            if (PrototypeScooter == null)
+                return null;
+            return PrototypeScooter.Duplica();
+        }
     }
 }
 

@@ -1,8 +1,11 @@
-﻿public class Administrativo : Empleado
+﻿namespace DesignPatterns.Multicast
 {
-    public Administrativo(string nombre)
-        : base(nombre)
+    public class Administrativo : Empleado
     {
+        public Administrativo(string nombre)
+            : base(nombre)
+        {
+        }
     }
 }
 

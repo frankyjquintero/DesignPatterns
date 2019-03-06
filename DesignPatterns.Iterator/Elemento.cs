@@ -1,16 +1,17 @@
-using System;
-
-public abstract class Elemento
+namespace DesignPatterns.Iterator
 {
-    protected string descripcion;
-
-    public Elemento(string descripcion)
+    public abstract class Elemento
     {
-        this.descripcion = descripcion;
-    }
+        protected string descripcion;
 
-    public bool palabraClaveValida(string palabraClave)
-    {
-        return descripcion.IndexOf(palabraClave) != -1;
+        public Elemento(string descripcion)
+        {
+            this.descripcion = descripcion;
+        }
+
+        public bool PalabraClaveValida(string palabraClave)
+        {
+            return descripcion.IndexOf(palabraClave) != -1;
+        }
     }
 }

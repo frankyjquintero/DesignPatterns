@@ -1,4 +1,7 @@
-public interface ComponenteGraficoVehiculo
+namespace DesignPatterns.Decorator
 {
-    void visualiza();
+    public interface IComponenteGraficoVehiculo
+    {
+        void Visualiza();
+    }
 }

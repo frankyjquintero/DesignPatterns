@@ -1,25 +1,29 @@
 using System;
 
-public class Usuario
+namespace DesignPatterns.ChainOfResponsibility
 {
-    static void Main(string[] args)
+    public static class Usuario
     {
-        ObjetoBasico vehiculo1 = new Vehiculo(
-          "Auto++ KT500 Vehículo de ocasión en buen estado");
-        Console.WriteLine(vehiculo1.devuelveDescripcion());
-        ObjetoBasico modelo1 = new Modelo("KT400",
-          "Vehículo amplio y confortable");
-        ObjetoBasico vehiculo2 = new Vehiculo(null);
-        vehiculo2.siguiente = modelo1;
-        Console.WriteLine(vehiculo2.devuelveDescripcion());
-        ObjetoBasico marca1 = new Marca("Auto++",
-          "Marca del automóvil", "de gran calidad");
-        ObjetoBasico modelo2 = new Modelo("KT700", null);
-        modelo2.siguiente = marca1;
-        ObjetoBasico vehiculo3 = new Vehiculo(null);
-        vehiculo3.siguiente = modelo2;
-        Console.WriteLine(vehiculo3.devuelveDescripcion());
-        ObjetoBasico vehiculo4 = new Vehiculo(null);
-        Console.WriteLine(vehiculo4.devuelveDescripcion());
+        static void Main(string[] args)
+        {
+            ObjetoBasico vehiculo1 = new Vehiculo(
+                "Auto++ KT500 Vehículo de ocasión en buen estado");
+            Console.WriteLine(vehiculo1.DevuelveDescripcion());
+            ObjetoBasico modelo1 = new Modelo("KT400",
+                "Vehículo amplio y confortable");
+            ObjetoBasico vehiculo2 = new Vehiculo(null);
+            vehiculo2.Siguiente = modelo1;
+            Console.WriteLine(vehiculo2.DevuelveDescripcion());
+            ObjetoBasico marca1 = new Marca("Auto++",
+                "Marca del automóvil", "de gran calidad");
+            ObjetoBasico modelo2 = new Modelo("KT700", null);
+            modelo2.Siguiente = marca1;
+            ObjetoBasico vehiculo3 = new Vehiculo(null);
+            vehiculo3.Siguiente = modelo2;
+            Console.WriteLine(vehiculo3.DevuelveDescripcion());
+            ObjetoBasico vehiculo4 = new Vehiculo(null);
+            Console.WriteLine(vehiculo4.DevuelveDescripcion());
+            Console.ReadKey();
+        }
     }
 }

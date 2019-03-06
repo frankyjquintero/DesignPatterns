@@ -1,30 +1,33 @@
 using System;
 
-public class AnimacionProxy : Animacion
+namespace DesignPatterns.Proxy
 {
-    protected Video video = null;
-    protected string foto = "mostrar la foto";
-
-    public void clic()
+    public class AnimacionProxy : IAnimacion
     {
-        if (video == null)
+        protected Video video = null;
+        protected string foto = "mostrar la foto";
+
+        public void Clic()
         {
-            video = new Video();
-            video.carga();
+            if (video == null)
+            {
+                video = new Video();
+                video.Carga();
+            }
+            video.Reproduce();
         }
-        video.reproduce();
-    }
 
-    public void dibuja()
-    {
-        if (video != null)
-            video.dibuja();
-        else
-            dibuja(foto);
-    }
+        public void Dibuja()
+        {
+            if (video != null)
+                video.Dibuja();
+            else
+                Dibuja(foto);
+        }
 
-    public void dibuja(string foto)
-    {
-        Console.WriteLine(foto);
+        public void Dibuja(string foto)
+        {
+            Console.WriteLine(foto);
+        }
     }
 }

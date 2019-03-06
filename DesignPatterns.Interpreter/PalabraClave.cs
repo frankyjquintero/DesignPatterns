@@ -1,25 +1,26 @@
-using System;
-
-public class PalabraClave : Expresion
+namespace DesignPatterns.Interpreter
 {
-    protected string palabraClave;
-
-    public PalabraClave(string palabraClave)
+    public class PalabraClave : Expresion
     {
-        this.palabraClave = palabraClave;
-    }
+        protected string palabraClave;
 
-    public override bool evalua(string descripcion)
-    {
-        return descripcion.IndexOf(palabraClave) != -1;
-    }
+        public PalabraClave(string palabraClave)
+        {
+            this.palabraClave = palabraClave;
+        }
 
-    // parte análisis sintáctico
-    public static new Expresion parsea()
-    {
-        Expresion resultado;
-        resultado = new PalabraClave(pieza);
-        siguientePieza();
-        return resultado;
+        public override bool Evalua(string descripcion)
+        {
+            return descripcion.IndexOf(palabraClave) != -1;
+        }
+
+        // parte análisis sintáctico
+        public static new Expresion Parsea()
+        {
+            Expresion resultado;
+            resultado = new PalabraClave(pieza);
+            SiguientePieza();
+            return resultado;
+        }
     }
 }

@@ -1,4 +1,7 @@
-﻿public interface Visitable
+﻿namespace DesignPatterns.ReflectiveVisitor
 {
+    public interface IVisitable
+    {
+    }
 }
 

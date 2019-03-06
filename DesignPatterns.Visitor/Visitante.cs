@@ -1,5 +1,8 @@
-public interface Visitante
+namespace DesignPatterns.Visitor
 {
-    void visita(EmpresaSinFilial empresa);
-    void visita(EmpresaMadre empresa);
+    public interface IVisitante
+    {
+        void Visita(EmpresaSinFilial empresa);
+        void Visita(EmpresaMadre empresa);
+    }
 }

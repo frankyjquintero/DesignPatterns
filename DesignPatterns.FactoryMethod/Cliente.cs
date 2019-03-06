@@ -1,19 +1,22 @@
 using System.Collections.Generic;
 
-public abstract class Cliente
+namespace DesignPatterns.FactoryMethod
 {
-    protected IList<Pedido> pedidos =
-        new List<Pedido>();
-
-    protected abstract Pedido creaPedido(double importe);
-
-    public void nuevoPedido(double importe)
+    public abstract class Cliente
     {
-        Pedido pedido = this.creaPedido(importe);
-        if (pedido.valida())
+        protected IList<Pedido> pedidos =
+            new List<Pedido>();
+
+        protected abstract Pedido CreaPedido(double importe);
+
+        public void NuevoPedido(double importe)
         {
-            pedido.paga();
-            pedidos.Add(pedido);
+            Pedido pedido = this.CreaPedido(importe);
+            if (pedido.Valida())
+            {
+                pedido.Paga();
+                pedidos.Add(pedido);
+            }
         }
     }
 }

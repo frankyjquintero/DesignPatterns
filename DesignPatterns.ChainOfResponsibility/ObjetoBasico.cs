@@ -1,25 +1,26 @@
-using System;
-
-public abstract class ObjetoBasico
+namespace DesignPatterns.ChainOfResponsibility
 {
-    public ObjetoBasico siguiente { protected get; set; }
-
-    private string descripcionPorDefecto()
+    public abstract class ObjetoBasico
     {
-        return "descripción por defecto";
-    }
+        public ObjetoBasico Siguiente { protected get; set; }
 
-    protected abstract string descripcion { get; }
+        private string DescripcionPorDefecto()
+        {
+            return "descripción por defecto";
+        }
 
-    public string devuelveDescripcion()
-    {
-        string resultado;
-        resultado = this.descripcion;
-        if (resultado != null)
-            return resultado;
-        if (siguiente != null)
-            return siguiente.devuelveDescripcion();
-        else
-            return this.descripcionPorDefecto();
+        protected abstract string Descripcion { get; }
+
+        public string DevuelveDescripcion()
+        {
+            string resultado;
+            resultado = this.Descripcion;
+            if (resultado != null)
+                return resultado;
+            if (Siguiente != null)
+                return Siguiente.DevuelveDescripcion();
+            else
+                return this.DescripcionPorDefecto();
+        }
     }
 }

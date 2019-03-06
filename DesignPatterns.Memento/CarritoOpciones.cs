@@ -1,38 +1,41 @@
 using System;
 using System.Collections.Generic;
 
-public class CarritoOpciones
+namespace DesignPatterns.Memento
 {
-    protected IList<OpcionVehiculo> opciones =
-      new List<OpcionVehiculo>();
-
-    public Memento agregaOpcion(OpcionVehiculo
-    opcionVehiculo)
+    public class CarritoOpciones
     {
-        MementoImpl resultado = new MementoImpl();
-        resultado.estado = opciones;
-        IList<OpcionVehiculo> opcionesIncompatibles =
-          opcionVehiculo.opcionesIncompatibles;
-        foreach (OpcionVehiculo opcion in
-          opcionesIncompatibles)
-            opciones.Remove(opcion);
-        opciones.Add(opcionVehiculo);
-        return resultado;
-    }
+        protected IList<OpcionVehiculo> opciones =
+            new List<OpcionVehiculo>();
 
-    public void anula(Memento memento)
-    {
-        MementoImpl mementoImplInstance = memento as MementoImpl;
-        if (mementoImplInstance == null)
-            return;
-        opciones = mementoImplInstance.estado;
-    }
+        public IMemento AgregaOpcion(OpcionVehiculo
+            opcionVehiculo)
+        {
+            MementoImpl resultado = new MementoImpl();
+            resultado.Estado = opciones;
+            IList<OpcionVehiculo> opcionesIncompatibles =
+                opcionVehiculo.OpcionesIncompatibles;
+            foreach (OpcionVehiculo opcion in
+                opcionesIncompatibles)
+                opciones.Remove(opcion);
+            opciones.Add(opcionVehiculo);
+            return resultado;
+        }
 
-    public void visualiza()
-    {
-        Console.WriteLine("Contenido del carrito de opciones");
-        foreach (OpcionVehiculo opcion in opciones)
-            opcion.visualiza();
-        Console.WriteLine();
+        public void Anula(IMemento memento)
+        {
+            MementoImpl mementoImplInstance = memento as MementoImpl;
+            if (mementoImplInstance == null)
+                return;
+            opciones = mementoImplInstance.Estado;
+        }
+
+        public void Visualiza()
+        {
+            Console.WriteLine("Contenido del carrito de opciones");
+            foreach (OpcionVehiculo opcion in opciones)
+                opcion.Visualiza();
+            Console.WriteLine();
+        }
     }
 }

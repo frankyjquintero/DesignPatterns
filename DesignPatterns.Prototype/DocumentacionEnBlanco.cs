@@ -1,28 +1,29 @@
 using System.Collections.Generic;
 
-public class DocumentacionEnBlanco : Documentacion
+namespace DesignPatterns.Prototype
 {
-    private static DocumentacionEnBlanco _instance = null;
-
-    private DocumentacionEnBlanco()
+    public class DocumentacionEnBlanco : Documentacion
     {
-        documentos = new List<Documento>();
-    }
+        private static DocumentacionEnBlanco _instance = null;
 
-    public static DocumentacionEnBlanco Instance()
-    {
-        if (_instance == null)
-            _instance = new DocumentacionEnBlanco();
-        return _instance;
-    }
+        private DocumentacionEnBlanco()
+        {
+            Documentos = new List<Documento>();
+        }
 
-    public void incluye(Documento doc)
-    {
-        documentos.Add(doc);
-    }
+        public static DocumentacionEnBlanco Instance()
+        {
+            return _instance ?? (_instance = new DocumentacionEnBlanco());
+        }
 
-    public void excluye(Documento doc)
-    {
-        documentos.Remove(doc);
+        public void Incluye(Documento doc)
+        {
+            Documentos.Add(doc);
+        }
+
+        public void Excluye(Documento doc)
+        {
+            Documentos.Remove(doc);
+        }
     }
 }

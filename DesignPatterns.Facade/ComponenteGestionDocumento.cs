@@ -1,10 +1,11 @@
-using System;
-
-public class ComponenteGestionDocumento : GestionDocumento
+namespace DesignPatterns.Facade
 {
-
-    public string documento(int indice)
+    public class ComponenteGestionDocumento : IGestionDocumento
     {
-        return "Documento número " + indice;
+
+        public string Documento(int indice)
+        {
+            return "Documento número " + indice;
+        }
     }
 }

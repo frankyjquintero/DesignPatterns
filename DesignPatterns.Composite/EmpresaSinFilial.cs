@@ -1,14 +1,15 @@
-using System;
-
-public class EmpresaSinFilial : Empresa
+namespace DesignPatterns.Composite
 {
-    public override bool agregaFilial(Empresa filial)
+    public class EmpresaSinFilial : Empresa
     {
-        return false;
-    }
+        public override bool AgregaFilial(Empresa filial)
+        {
+            return false;
+        }
 
-    public override double calculaCosteMantenimiento()
-    {
-        return nVehiculos * costeUnitarioVehiculo;
+        public override double CalculaCosteMantenimiento()
+        {
+            return nVehiculos * costeUnitarioVehiculo;
+        }
     }
 }

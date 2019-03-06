@@ -1,10 +1,13 @@
-public class VistaVehiculo
+namespace DesignPatterns.Proxy
 {
-    static void Main(string[] args)
+    public class VistaVehiculo
     {
-        Animacion animacion = new AnimacionProxy();
-        animacion.dibuja();
-        animacion.clic();
-        animacion.dibuja();
+        static void Main(string[] args)
+        {
+            IAnimacion animacion = new AnimacionProxy();
+            animacion.Dibuja();
+            animacion.Clic();
+            animacion.Dibuja();
+        }
     }
 }

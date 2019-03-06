@@ -1,5 +1,8 @@
-﻿public interface ReceptorGeneral :
- ReceptorAbstracto<MensajeGeneral>
+﻿namespace DesignPatterns.Multicast
 {
+    public interface IReceptorGeneral :
+        IReceptorAbstracto<MensajeGeneral>
+    {
+    }
 }
 

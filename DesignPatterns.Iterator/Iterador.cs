@@ -1,37 +1,39 @@
-using System;
 using System.Collections.Generic;
 
-public abstract class Iterador<TElemento>
-  where TElemento : Elemento
+namespace DesignPatterns.Iterator
 {
-    public string palabraClaveConsulta { protected get; set; }
-    protected int indice;
-    public IList<TElemento> contenido { protected get; set; }
-
-
-    public void inicio()
+    public abstract class Iterador<TElemento>
+        where TElemento : Elemento
     {
-        indice = 0;
-        int tamaño = contenido.Count;
-        while ((indice < tamaño) &&
-          (!contenido[indice].palabraClaveValida(palabraClaveConsulta)))
+        public string PalabraClaveConsulta { protected get; set; }
+        protected int indice;
+        public IList<TElemento> Contenido { protected get; set; }
+
+
+        public void Inicio()
+        {
+            indice = 0;
+            int tamaño = Contenido.Count;
+            while ((indice < tamaño) &&
+                   (!Contenido[indice].PalabraClaveValida(PalabraClaveConsulta)))
+                indice++;
+        }
+
+        public void Siguiente()
+        {
+            int tamaño = Contenido.Count;
             indice++;
-    }
+            while ((indice < tamaño) &&
+                   (!Contenido[indice].PalabraClaveValida(PalabraClaveConsulta)))
+                indice++;
+        }
 
-    public void siguiente()
-    {
-        int tamaño = contenido.Count;
-        indice++;
-        while ((indice < tamaño) &&
-          (!contenido[indice].palabraClaveValida(palabraClaveConsulta)))
-            indice++;
-    }
-
-    public TElemento item()
-    {
-        if (indice < contenido.Count)
-            return contenido[indice];
-        else
-            return null;
+        public TElemento Item()
+        {
+            if (indice < Contenido.Count)
+                return Contenido[indice];
+            else
+                return null;
+        }
     }
 }

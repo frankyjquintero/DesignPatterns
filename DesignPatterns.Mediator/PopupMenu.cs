@@ -1,34 +1,37 @@
 using System;
 using System.Collections.Generic;
 
-public class PopupMenu : Control
+namespace DesignPatterns.Mediator
 {
-    protected IList<string> opciones =
-        new List<string>();
-
-    public PopupMenu(string nombre) : base(nombre) { }
-
-    public override void informa()
+    public class PopupMenu : Control
     {
-        Console.WriteLine("Información de: " + nombre);
-        Console.WriteLine("Valor actual: " + valor);
-        for (int indice = 0; indice < opciones.Count; indice++)
-            Console.WriteLine("- " + indice + " )" +
-              opciones[indice]);
-        int eleccion = int.Parse(Console.ReadLine());
-        if ((eleccion >= 0) && (eleccion < opciones.Count))
+        protected IList<string> opciones =
+            new List<string>();
+
+        public PopupMenu(string nombre) : base(nombre) { }
+
+        public override void Informa()
         {
-            bool cambia = (valor != opciones[eleccion]);
-            if (cambia)
+            Console.WriteLine("Información de: " + Nombre);
+            Console.WriteLine("Valor actual: " + Valor);
+            for (int indice = 0; indice < opciones.Count; indice++)
+                Console.WriteLine("- " + indice + " )" +
+                                  opciones[indice]);
+            int eleccion = int.Parse(Console.ReadLine());
+            if ((eleccion >= 0) && (eleccion < opciones.Count))
             {
-                valor = opciones[eleccion];
-                this.modifica();
+                bool cambia = (Valor != opciones[eleccion]);
+                if (cambia)
+                {
+                    Valor = opciones[eleccion];
+                    this.Modifica();
+                }
             }
         }
-    }
 
-    public void agregaOpcion(string opcion)
-    {
-        opciones.Add(opcion);
+        public void AgregaOpcion(string opcion)
+        {
+            opciones.Add(opcion);
+        }
     }
 }

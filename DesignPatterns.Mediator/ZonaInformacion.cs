@@ -1,13 +1,16 @@
 using System;
 
-public class ZonaInformacion : Control
+namespace DesignPatterns.Mediator
 {
-    public ZonaInformacion(string nombre) : base(nombre) { }
-
-    public override void informa()
+    public class ZonaInformacion : Control
     {
-        Console.WriteLine("Información de: " + nombre);
-        valor = Console.ReadLine();
-        this.modifica();
+        public ZonaInformacion(string nombre) : base(nombre) { }
+
+        public override void Informa()
+        {
+            Console.WriteLine("Información de: " + Nombre);
+            Valor = Console.ReadLine();
+            this.Modifica();
+        }
     }
 }

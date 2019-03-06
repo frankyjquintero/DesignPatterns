@@ -1,4 +1,7 @@
-﻿public abstract class MensajeAbstracto
+﻿namespace DesignPatterns.Multicast
 {
+    public abstract class MensajeAbstracto
+    {
+    }
 }
 

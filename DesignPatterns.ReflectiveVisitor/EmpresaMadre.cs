@@ -1,20 +1,22 @@
-using System;
 using System.Collections.Generic;
 
-public class EmpresaMadre : Empresa
+namespace DesignPatterns.ReflectiveVisitor
 {
-    public IList<Empresa> filiales { get; protected set; }
-
-    public EmpresaMadre(string nombre, string email, string
-     direccion)
-        : base(nombre, email, direccion)
+    public class EmpresaMadre : Empresa
     {
-        filiales = new List<Empresa>();
-    }
+        public IList<Empresa> Filiales { get; protected set; }
 
-    public override bool agregaFilial(Empresa filial)
-    {
-        filiales.Add(filial);
-        return true;
+        public EmpresaMadre(string nombre, string email, string
+            direccion)
+            : base(nombre, email, direccion)
+        {
+            Filiales = new List<Empresa>();
+        }
+
+        public override bool AgregaFilial(Empresa filial)
+        {
+            Filiales.Add(filial);
+            return true;
+        }
     }
 }

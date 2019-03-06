@@ -1,14 +1,17 @@
-public abstract class EstadoPedido
+namespace DesignPatterns.State
 {
-    protected Pedido pedido;
-
-    public EstadoPedido(Pedido pedido)
+    public abstract class EstadoPedido
     {
-        this.pedido = pedido;
-    }
+        protected Pedido pedido;
 
-    public abstract void agregaProducto(Producto producto);
-    public abstract void borra();
-    public abstract void suprimeProducto(Producto producto);
-    public abstract EstadoPedido estadoSiguiente();
+        public EstadoPedido(Pedido pedido)
+        {
+            this.pedido = pedido;
+        }
+
+        public abstract void AgregaProducto(Producto producto);
+        public abstract void Borra();
+        public abstract void SuprimeProducto(Producto producto);
+        public abstract EstadoPedido EstadoSiguiente();
+    }
 }

@@ -1,24 +1,25 @@
-using System;
-
-public class Modelo : ObjetoBasico
+namespace DesignPatterns.ChainOfResponsibility
 {
-    protected string laDescripcion;
-    protected string nombre;
-
-    public Modelo(string nombre, string descripcion)
+    public class Modelo : ObjetoBasico
     {
-        this.laDescripcion = descripcion;
-        this.nombre = nombre;
-    }
+        protected string laDescripcion;
+        protected string nombre;
 
-    protected override string descripcion
-    {
-        get
+        public Modelo(string nombre, string descripcion)
         {
-            if (laDescripcion != null)
-                return "Modelo " + nombre + " : " + laDescripcion;
-            else
-                return null;
+            this.laDescripcion = descripcion;
+            this.nombre = nombre;
+        }
+
+        protected override string Descripcion
+        {
+            get
+            {
+                if (laDescripcion != null)
+                    return "Modelo " + nombre + " : " + laDescripcion;
+                else
+                    return null;
+            }
         }
     }
 }

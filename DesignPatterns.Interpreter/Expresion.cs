@@ -1,60 +1,63 @@
 using System;
 
-public abstract class Expresion
+namespace DesignPatterns.Interpreter
 {
-    public abstract bool evalua(string descripcion);
-
-    // parte análisis sintáctico
-    protected static string fuente;
-    protected static int indice;
-    protected static string pieza;
-
-    protected static void siguientePieza()
+    public abstract class Expresion
     {
-        while ((indice < fuente.Length) && (fuente[indice] ==
-        ' '))
-            indice++;
-        if (indice == fuente.Length)
-            pieza = null;
-        else if ((fuente[indice] == '(') || (fuente[indice] ==
-        ')'))
+        public abstract bool Evalua(string descripcion);
+
+        // parte análisis sintáctico
+        protected static string fuente;
+        protected static int indice;
+        protected static string pieza;
+
+        protected static void SiguientePieza()
         {
-            pieza = fuente.Substring(indice, 1);
-            indice++;
-        }
-        else
-        {
-            int inicio = indice;
-            while ((indice < fuente.Length) && (fuente[indice] !=
-            ' ') && (fuente[indice] != ')'))
+            while ((indice < fuente.Length) && (fuente[indice] ==
+                                                ' '))
                 indice++;
-            pieza = fuente.Substring(inicio, indice - inicio);
+            if (indice == fuente.Length)
+                pieza = null;
+            else if ((fuente[indice] == '(') || (fuente[indice] ==
+                                                 ')'))
+            {
+                pieza = fuente.Substring(indice, 1);
+                indice++;
+            }
+            else
+            {
+                int inicio = indice;
+                while ((indice < fuente.Length) && (fuente[indice] !=
+                                                    ' ') && (fuente[indice] != ')'))
+                    indice++;
+                pieza = fuente.Substring(inicio, indice - inicio);
+            }
         }
-    }
 
-    public static Expresion analiza(string fuente)
-    {
-        Expresion.fuente = fuente;
-        indice = 0;
-        siguientePieza();
-        return OperadorO.parsea();
-    }
-
-    public static Expresion parsea()
-    {
-        Expresion resultado;
-        if (pieza == "(")
+        public static Expresion Analiza(string fuente)
         {
-            siguientePieza();
-            resultado = OperadorO.parsea();
-            if (pieza == null)
-                throw new Exception("Error de sintaxis");
-            if (pieza != ")")
-                throw new Exception("Error de sintaxis");
-            siguientePieza();
+            Expresion.fuente = fuente;
+            indice = 0;
+            SiguientePieza();
+            return OperadorO.Parsea();
         }
-        else
-            resultado = PalabraClave.parsea();
-        return resultado;
+
+        public static Expresion Parsea()
+        {
+            Expresion resultado;
+            if (pieza == "(")
+            {
+                SiguientePieza();
+                resultado = OperadorO.Parsea();
+                if (pieza == null)
+                    throw new Exception("Error de sintaxis");
+                if (pieza != ")")
+                    throw new Exception("Error de sintaxis");
+                SiguientePieza();
+            }
+            else
+                resultado = PalabraClave.Parsea();
+            return resultado;
+        }
     }
 }

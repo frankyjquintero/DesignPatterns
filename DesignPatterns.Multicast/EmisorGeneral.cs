@@ -1,5 +1,8 @@
-﻿public class EmisorGeneral : EmisorAbstracto
- <MensajeGeneral, ReceptorGeneral>
+﻿namespace DesignPatterns.Multicast
 {
+    public class EmisorGeneral : EmisorAbstracto
+        <MensajeGeneral, IReceptorGeneral>
+    {
+    }
 }
 

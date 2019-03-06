@@ -1,5 +1,8 @@
-public interface IFormularioImpl
+namespace DesignPatterns.Bridge
 {
-    void DibujaTexto(string texto);
-    string AdministraZonaIndicada();
+    public interface IFormularioImpl
+    {
+        void DibujaTexto(string texto);
+        string AdministraZonaIndicada();
+    }
 }

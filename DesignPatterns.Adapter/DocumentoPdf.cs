@@ -1,21 +1,24 @@
-public class DocumentoPdf : IDocumento
+namespace DesignPatterns.Adapter
 {
-    protected ComponentePdf herramientaPdf = new ComponentePdf();
-
-    public string Contenido
+    public class DocumentoPdf : IDocumento
     {
-        set => herramientaPdf.PdfFijaContenido(value);
-    }
+        protected ComponentePdf herramientaPdf = new ComponentePdf();
 
-    public void Dibuja()
-    {
-        herramientaPdf.PdfPreparaVisualizacion();
-        herramientaPdf.PdfRefresca();
-        herramientaPdf.PdfFinalizaVisualizacion();
-    }
+        public string Contenido
+        {
+            set => herramientaPdf.PdfFijaContenido(value);
+        }
 
-    public void Imprime()
-    {
-        herramientaPdf.PdfEnviaImpresora();
+        public void Dibuja()
+        {
+            herramientaPdf.PdfPreparaVisualizacion();
+            herramientaPdf.PdfRefresca();
+            herramientaPdf.PdfFinalizaVisualizacion();
+        }
+
+        public void Imprime()
+        {
+            herramientaPdf.PdfEnviaImpresora();
+        }
     }
 }

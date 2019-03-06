@@ -1,34 +1,29 @@
-using System;
-
-public class Vehiculo : Sujeto
+namespace DesignPatterns.Observer
 {
-    protected string _descripcion;
-    protected double _precio;
-
-    public string descripcion
+    public class Vehiculo : Sujeto
     {
-        get
-        {
-            return _descripcion;
-        }
-        set
-        {
-            _descripcion = value;
-            this.notifica();
-        }
-    }
+        private string _descripcion;
+        private double _precio;
 
-    public double precio
-    {
-        get
+        public string Descripcion
         {
-            return _precio;
+            get => _descripcion;
+            set
+            {
+                _descripcion = value;
+                this.Notifica();
+            }
         }
-        set
-        {
-            _precio = value;
-            this.notifica();
-        }
-    }
 
+        public double Precio
+        {
+            get => _precio;
+            set
+            {
+                _precio = value;
+                this.Notifica();
+            }
+        }
+
+    }
 }

@@ -1,32 +1,35 @@
-public abstract class FormularioMatriculacion
+namespace DesignPatterns.Bridge
 {
-    protected string contenido;
-    protected IFormularioImpl implementacion;
-
-    public FormularioMatriculacion(IFormularioImpl
-      implementacion)
+    public abstract class FormularioMatriculacion
     {
-        this.implementacion = implementacion;
-    }
+        protected string contenido;
+        protected IFormularioImpl implementacion;
 
-    public void Visualiza()
-    {
-        implementacion.DibujaTexto(
-        "número de matrícula existente: ");
-    }
+        public FormularioMatriculacion(IFormularioImpl
+            implementacion)
+        {
+            this.implementacion = implementacion;
+        }
 
-    public void GeneraDocumento()
-    {
-        implementacion.DibujaTexto("Solicitud de matriculación");
-        implementacion.DibujaTexto("número de matrícula: " +
-        contenido);
-    }
+        public void Visualiza()
+        {
+            implementacion.DibujaTexto(
+                "número de matrícula existente: ");
+        }
 
-    public bool AdministraZona()
-    {
-        contenido = implementacion.AdministraZonaIndicada();
-        return ControlZona(contenido);
-    }
+        public void GeneraDocumento()
+        {
+            implementacion.DibujaTexto("Solicitud de matriculación");
+            implementacion.DibujaTexto("número de matrícula: " +
+                                       contenido);
+        }
 
-    protected abstract bool ControlZona(string matricula);
+        public bool AdministraZona()
+        {
+            contenido = implementacion.AdministraZonaIndicada();
+            return ControlZona(contenido);
+        }
+
+        protected abstract bool ControlZona(string matricula);
+    }
 }

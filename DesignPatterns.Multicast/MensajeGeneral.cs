@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-public class MensajeGeneral : MensajeAbstracto
+namespace DesignPatterns.Multicast
 {
-    public IList<string> contenido { get; protected set; }
-
-    public MensajeGeneral(IList<string> contenido)
+    public class MensajeGeneral : MensajeAbstracto
     {
-        this.contenido = contenido;
+        public IList<string> Contenido { get; protected set; }
+
+        public MensajeGeneral(IList<string> contenido)
+        {
+            this.Contenido = contenido;
+        }
     }
 }
 

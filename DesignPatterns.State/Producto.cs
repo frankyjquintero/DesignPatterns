@@ -1,16 +1,19 @@
 using System;
 
-public class Producto
+namespace DesignPatterns.State
 {
-    protected string nombre;
-
-    public Producto(string nombre)
+    public class Producto
     {
-        this.nombre = nombre;
-    }
+        protected string nombre;
 
-    public void visualiza()
-    {
-        Console.WriteLine("Producto: " + nombre);
+        public Producto(string nombre)
+        {
+            this.nombre = nombre;
+        }
+
+        public void Visualiza()
+        {
+            Console.WriteLine("Producto: " + nombre);
+        }
     }
 }

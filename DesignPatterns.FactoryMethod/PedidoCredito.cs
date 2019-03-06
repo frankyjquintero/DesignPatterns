@@ -1,18 +1,21 @@
 using System;
 
-public class PedidoCredito : Pedido
+namespace DesignPatterns.FactoryMethod
 {
-    public PedidoCredito(double importe) : base(importe) { }
-
-    public override void paga()
+    public class PedidoCredito : Pedido
     {
-        Console.WriteLine(
-          "El pago del pedido a crédito de: " +
-          importe + " se ha realizado.");
-    }
+        public PedidoCredito(double importe) : base(importe) { }
 
-    public override bool valida()
-    {
-        return (importe >= 1000.0) && (importe <= 5000.0);
+        public override void Paga()
+        {
+            Console.WriteLine(
+                "El pago del pedido a crédito de: " +
+                importe + " se ha realizado.");
+        }
+
+        public override bool Valida()
+        {
+            return (importe >= 1000.0) && (importe <= 5000.0);
+        }
     }
 }

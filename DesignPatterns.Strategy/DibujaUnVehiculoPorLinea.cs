@@ -1,18 +1,21 @@
 using System;
 using System.Collections.Generic;
 
-public class DibujaUnVehiculoPorLinea : DibujaCatalogo
+namespace DesignPatterns.Strategy
 {
-
-    public void dibuja(IList<VistaVehiculo> contenido)
+    public class DibujaUnVehiculoPorLinea : IDibujaCatalogo
     {
-        Console.WriteLine(
-          "Dibuja los vehículos mostrando un vehículo por línea");
-        foreach (VistaVehiculo vistaVehiculo in contenido)
+
+        public void Dibuja(IList<VistaVehiculo> contenido)
         {
-            vistaVehiculo.dibuja();
+            Console.WriteLine(
+                "Dibuja los vehículos mostrando un vehículo por línea");
+            foreach (VistaVehiculo vistaVehiculo in contenido)
+            {
+                vistaVehiculo.Dibuja();
+                Console.WriteLine();
+            }
             Console.WriteLine();
         }
-        Console.WriteLine();
     }
 }

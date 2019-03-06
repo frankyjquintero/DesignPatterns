@@ -1,15 +1,18 @@
-public abstract class Decorador :
-  ComponenteGraficoVehiculo
+namespace DesignPatterns.Decorator
 {
-    protected ComponenteGraficoVehiculo componente;
-
-    public Decorador(ComponenteGraficoVehiculo componente)
+    public abstract class Decorador :
+        IComponenteGraficoVehiculo
     {
-        this.componente = componente;
-    }
+        protected IComponenteGraficoVehiculo componente;
 
-    public virtual void visualiza()
-    {
-        componente.visualiza();
+        public Decorador(IComponenteGraficoVehiculo componente)
+        {
+            this.componente = componente;
+        }
+
+        public virtual void Visualiza()
+        {
+            componente.Visualiza();
+        }
     }
 }

@@ -1,25 +1,28 @@
 using System;
 
-public class DocumentoHtml : IDocumento
+namespace DesignPatterns.Adapter
 {
-    protected string _contenido;
-
-    public string Contenido
+    public class DocumentoHtml : IDocumento
     {
-        protected get => _contenido;
-        set => _contenido = value;
-    }
+        protected string contenido;
 
-    public void Dibuja()
-    {
-        Console.WriteLine("Dibuja el documento HTML: " +
-          Contenido);
-    }
+        public string Contenido
+        {
+            protected get => contenido;
+            set => contenido = value;
+        }
 
-    public void Imprime()
-    {
-        Console.WriteLine("Imprime el documento HTML: " +
-          Contenido);
-    }
+        public void Dibuja()
+        {
+            Console.WriteLine("Dibuja el documento HTML: " +
+                              Contenido);
+        }
 
+        public void Imprime()
+        {
+            Console.WriteLine("Imprime el documento HTML: " +
+                              Contenido);
+        }
+
+    }
 }

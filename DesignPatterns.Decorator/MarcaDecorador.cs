@@ -1,19 +1,22 @@
 using System;
 
-public class MarcaDecorador : Decorador
+namespace DesignPatterns.Decorator
 {
-    public MarcaDecorador(ComponenteGraficoVehiculo
-    componente)
-        : base(componente) { }
-
-    protected void visualizaLogo()
+    public class MarcaDecorador : Decorador
     {
-        Console.WriteLine("Logotipo de la marca");
-    }
+        public MarcaDecorador(IComponenteGraficoVehiculo
+            componente)
+            : base(componente) { }
 
-    public override void visualiza()
-    {
-        base.visualiza();
-        this.visualizaLogo();
+        protected void VisualizaLogo()
+        {
+            Console.WriteLine("Logotipo de la marca");
+        }
+
+        public override void Visualiza()
+        {
+            base.Visualiza();
+            this.VisualizaLogo();
+        }
     }
 }

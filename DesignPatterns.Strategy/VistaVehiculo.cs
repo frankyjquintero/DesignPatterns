@@ -1,16 +1,19 @@
 using System;
 
-public class VistaVehiculo
+namespace DesignPatterns.Strategy
 {
-    protected string descripcion;
-
-    public VistaVehiculo(string descripcion)
+    public class VistaVehiculo
     {
-        this.descripcion = descripcion;
-    }
+        protected string descripcion;
 
-    public void dibuja()
-    {
-        Console.Write(descripcion);
+        public VistaVehiculo(string descripcion)
+        {
+            this.descripcion = descripcion;
+        }
+
+        public void Dibuja()
+        {
+            Console.Write(descripcion);
+        }
     }
 }

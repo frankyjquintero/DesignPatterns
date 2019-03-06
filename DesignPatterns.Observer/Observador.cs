@@ -1,4 +1,7 @@
-public interface Observador
+namespace DesignPatterns.Observer
 {
-    void actualiza();
+    public interface IObservador
+    {
+        void Actualiza();
+    }
 }

@@ -1,7 +1,10 @@
-public class PedidoLuxemburgo : Pedido
+namespace DesignPatterns.TemplateMethod
 {
-    protected override void calculaIVA()
+    public class PedidoLuxemburgo : Pedido
     {
-        importeIVA = importeSinIVA * 0.15;
+        protected override void CalculaIva()
+        {
+            importeIva = importeSinIva * 0.15;
+        }
     }
 }

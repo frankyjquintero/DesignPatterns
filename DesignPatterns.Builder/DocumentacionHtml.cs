@@ -1,17 +1,20 @@
 using System;
 
-public class DocumentacionHtml : Documentacion
+namespace DesignPatterns.Builder
 {
-    public override void agregaDocumento(string documento)
+    public class DocumentacionHtml : Documentacion
     {
-        if (documento.StartsWith("<HTML>"))
-            contenido.Add(documento);
-    }
+        public override void AgregaDocumento(string documento)
+        {
+            if (documento.StartsWith("<HTML>"))
+                contenido.Add(documento);
+        }
 
-    public override void imprime()
-    {
-        Console.WriteLine("Documentación HTML");
-        foreach (string s in contenido)
-            Console.WriteLine(s);
+        public override void Imprime()
+        {
+            Console.WriteLine("Documentación HTML");
+            foreach (string s in contenido)
+                Console.WriteLine(s);
+        }
     }
 }

@@ -1,21 +1,24 @@
 ﻿using System;
 
-public abstract class Empleado : ReceptorGeneral
+namespace DesignPatterns.Multicast
 {
-    protected string nombre;
-
-    public Empleado(string nombre)
+    public abstract class Empleado : IReceptorGeneral
     {
-        this.nombre = nombre;
-    }
+        protected string nombre;
 
-    public void recibe(MensajeGeneral mensaje)
-    {
-        Console.WriteLine("Mensaje general");
-        Console.WriteLine("Nombre: " + nombre);
-        Console.WriteLine("Mensaje: ");
-        foreach (string linea in mensaje.contenido)
-            Console.WriteLine(linea);
+        public Empleado(string nombre)
+        {
+            this.nombre = nombre;
+        }
+
+        public void Recibe(MensajeGeneral mensaje)
+        {
+            Console.WriteLine("Mensaje general");
+            Console.WriteLine("Nombre: " + nombre);
+            Console.WriteLine("Mensaje: ");
+            foreach (string linea in mensaje.Contenido)
+                Console.WriteLine(linea);
+        }
     }
 }
 

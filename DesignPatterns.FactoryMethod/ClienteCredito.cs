@@ -1,7 +1,10 @@
-public class ClienteCredito : Cliente
+namespace DesignPatterns.FactoryMethod
 {
-    protected override Pedido creaPedido(double importe)
+    public class ClienteCredito : Cliente
     {
-        return new PedidoCredito(importe);
+        protected override Pedido CreaPedido(double importe)
+        {
+            return new PedidoCredito(importe);
+        }
     }
 }

@@ -1,31 +1,33 @@
-using System;
 using System.Collections.Generic;
 
-public class DocumentacionCliente : Documentacion
+namespace DesignPatterns.Prototype
 {
-    public DocumentacionCliente(string informacion)
+    public class DocumentacionCliente : Documentacion
     {
-        documentos = new List<Documento>();
-        DocumentacionEnBlanco documentacionEnBlanco = DocumentacionEnBlanco.Instance();
-        IList<Documento> documentosEnBlanco =
-          documentacionEnBlanco.documentos;
-        foreach (Documento documento in documentosEnBlanco)
+        public DocumentacionCliente(string informacion)
         {
-            Documento copiaDocumento = documento.duplica();
-            copiaDocumento.rellena(informacion);
-            documentos.Add(copiaDocumento);
+            Documentos = new List<Documento>();
+            DocumentacionEnBlanco documentacionEnBlanco = DocumentacionEnBlanco.Instance();
+            IList<Documento> documentosEnBlanco =
+                documentacionEnBlanco.Documentos;
+            foreach (Documento documento in documentosEnBlanco)
+            {
+                Documento copiaDocumento = documento.Duplica();
+                copiaDocumento.Rellena(informacion);
+                Documentos.Add(copiaDocumento);
+            }
         }
-    }
 
-    public void visualiza()
-    {
-        foreach (Documento documento in documentos)
-            documento.visualiza();
-    }
+        public void Visualiza()
+        {
+            foreach (Documento documento in Documentos)
+                documento.Visualiza();
+        }
 
-    public void imprime()
-    {
-        foreach (Documento documento in documentos)
-            documento.imprime();
+        public void Imprime()
+        {
+            foreach (Documento documento in Documentos)
+                documento.Imprime();
+        }
     }
 }

@@ -1,20 +1,21 @@
-﻿using System;
-
-public abstract class Automovil
+﻿namespace DesignPatterns.PluggableFactory
 {
-    public string modelo { get; set; }
-    public string color { get; set; }
-    public int potencia { get; set; }
-    public double espacio { get; set; }
-
-    public Automovil duplica()
+    public abstract class Automovil
     {
-        Automovil resultado;
-        resultado = (Automovil)this.MemberwiseClone();
-        return resultado;
-    }
+        public string Modelo { get; set; }
+        public string Color { get; set; }
+        public int Potencia { get; set; }
+        public double Espacio { get; set; }
 
-    public abstract void visualizaCaracteristicas();
+        public Automovil Duplica()
+        {
+            Automovil resultado;
+            resultado = (Automovil)this.MemberwiseClone();
+            return resultado;
+        }
+
+        public abstract void VisualizaCaracteristicas();
+    }
 }
 
 

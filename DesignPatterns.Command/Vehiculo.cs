@@ -1,33 +1,36 @@
 using System;
 
-public class Vehiculo
+namespace DesignPatterns.Command
 {
-    protected string nombre;
-    protected long fechaEntradaStock;
-    protected double precioVenta;
-
-    public Vehiculo(string nombre, long fechaEntradaStock,
-      double precioVenta)
+    public class Vehiculo
     {
-        this.nombre = nombre;
-        this.fechaEntradaStock = fechaEntradaStock;
-        this.precioVenta = precioVenta;
-    }
+        protected string nombre;
+        protected long fechaEntradaStock;
+        protected double precioVenta;
 
-    public long getTiempoEnStock(long hoy)
-    {
-        return hoy - fechaEntradaStock;
-    }
+        public Vehiculo(string nombre, long fechaEntradaStock,
+            double precioVenta)
+        {
+            this.nombre = nombre;
+            this.fechaEntradaStock = fechaEntradaStock;
+            this.precioVenta = precioVenta;
+        }
 
-    public void modificaPrecio(double coeficiente)
-    {
-        this.precioVenta = 0.01 * Math.Round(coeficiente *
-        this.precioVenta * 100);
-    }
+        public long GetTiempoEnStock(long hoy)
+        {
+            return hoy - fechaEntradaStock;
+        }
 
-    public void visualiza()
-    {
-        Console.WriteLine(nombre + " precio: " + precioVenta +
-          " fecha entrada stock " + fechaEntradaStock);
+        public void ModificaPrecio(double coeficiente)
+        {
+            this.precioVenta = 0.01 * Math.Round(coeficiente *
+                                                 this.precioVenta * 100);
+        }
+
+        public void Visualiza()
+        {
+            Console.WriteLine(nombre + " precio: " + precioVenta +
+                              " fecha entrada stock " + fechaEntradaStock);
+        }
     }
 }

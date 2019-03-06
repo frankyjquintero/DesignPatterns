@@ -1,26 +1,29 @@
-public class PedidoEnCurso : EstadoPedido
+namespace DesignPatterns.State
 {
-    public PedidoEnCurso(Pedido pedido)
-        : base
-    (pedido) { }
-
-    public override void agregaProducto(Producto producto)
+    public class PedidoEnCurso : EstadoPedido
     {
-        pedido.Productos.Add(producto);
-    }
+        public PedidoEnCurso(Pedido pedido)
+            : base
+                (pedido) { }
 
-    public override void borra()
-    {
-        pedido.Productos.Clear();
-    }
+        public override void AgregaProducto(Producto producto)
+        {
+            pedido.Productos.Add(producto);
+        }
 
-    public override void suprimeProducto(Producto producto)
-    {
-        pedido.Productos.Remove(producto);
-    }
+        public override void Borra()
+        {
+            pedido.Productos.Clear();
+        }
 
-    public override EstadoPedido estadoSiguiente()
-    {
-        return new PedidoValidado(pedido);
+        public override void SuprimeProducto(Producto producto)
+        {
+            pedido.Productos.Remove(producto);
+        }
+
+        public override EstadoPedido EstadoSiguiente()
+        {
+            return new PedidoValidado(pedido);
+        }
     }
 }

@@ -1,24 +1,27 @@
 using System;
 
-public class ClienteVehiculo
+namespace DesignPatterns.Builder
 {
-    static void Main(string[] args)
+    public static class ClienteVehiculo
     {
-        ConstructorDocumentacionVehiculo constructor;
-        Console.WriteLine("Desea generar " +
-          "documentación HTML (1) o PDF (2):");
-        string seleccion = Console.ReadLine();
-        if (seleccion == "1")
+        static void Main(string[] args)
         {
-            constructor = new ConstructorDocumentacionVehiculoHtml();
+            ConstructorDocumentacionVehiculo constructor;
+            Console.WriteLine("Desea generar " +
+                              "documentación HTML (1) o PDF (2):");
+            string seleccion = Console.ReadLine();
+            if (seleccion == "1")
+            {
+                constructor = new ConstructorDocumentacionVehiculoHtml();
+            }
+            else
+            {
+                constructor = new ConstructorDocumentacionVehiculoPdf();
+            }
+            Vendedor vendedor = new Vendedor(constructor);
+            Documentacion documentacion = vendedor.Construye("Martín");
+            documentacion.Imprime();
+            Console.ReadKey();
         }
-        else
-        {
-            constructor = new ConstructorDocumentacionVehiculoPdf();
-        }
-        Vendedor vendedor = new Vendedor(constructor);
-        Documentacion documentacion = vendedor.construye("Martín");
-        documentacion.imprime();
-        Console.ReadKey();
     }
 }

@@ -1,13 +1,16 @@
 ﻿using System;
 
-public class ScooterGasolina : Scooter
+namespace DesignPatterns.PluggableFactory
 {
-
-    public override void visualizaCaracteristicas()
+    public class ScooterGasolina : Scooter
     {
-        Console.WriteLine("Scooter de gasolina de modelo: " +
-         modelo + " de color: " + color +
-         " de potencia: " + potencia);
+
+        public override void VisualizaCaracteristicas()
+        {
+            Console.WriteLine("Scooter de gasolina de modelo: " +
+                              Modelo + " de color: " + Color +
+                              " de potencia: " + Potencia);
+        }
     }
 }
 

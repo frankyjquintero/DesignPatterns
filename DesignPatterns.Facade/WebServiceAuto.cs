@@ -1,9 +1,11 @@
-using System;
 using System.Collections.Generic;
 
-public interface WebServiceAuto
+namespace DesignPatterns.Facade
 {
-  string documento(int indice);
-  IList<string> buscaVehiculos(int precioMedio, int
-    desviacionMax);
+    public interface IWebServiceAuto
+    {
+        string Documento(int indice);
+        IList<string> BuscaVehiculos(int precioMedio, int
+            desviacionMax);
+    }
 }

@@ -1,11 +1,14 @@
-public abstract class OperadorBinario : Expresion
+namespace DesignPatterns.Interpreter
 {
-    protected Expresion operandoIzquierdo, operandoDerecho;
-
-    public OperadorBinario(Expresion operandoIzquierdo,
-      Expresion operandoDerecho)
+    public abstract class OperadorBinario : Expresion
     {
-        this.operandoIzquierdo = operandoIzquierdo;
-        this.operandoDerecho = operandoDerecho;
+        protected Expresion operandoIzquierdo, operandoDerecho;
+
+        public OperadorBinario(Expresion operandoIzquierdo,
+            Expresion operandoDerecho)
+        {
+            this.operandoIzquierdo = operandoIzquierdo;
+            this.operandoDerecho = operandoDerecho;
+        }
     }
 }

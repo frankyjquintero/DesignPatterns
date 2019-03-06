@@ -1,18 +1,19 @@
-using System;
-
-public class EmpresaSinFilial : Empresa
+namespace DesignPatterns.Visitor
 {
-    public EmpresaSinFilial(string nombre, string email,
-    string direccion)
-        : base(nombre, email, direccion) { }
-
-    public override void aceptaVisitante(Visitante visitante)
+    public class EmpresaSinFilial : Empresa
     {
-        visitante.visita(this);
-    }
+        public EmpresaSinFilial(string nombre, string email,
+            string direccion)
+            : base(nombre, email, direccion) { }
 
-    public override bool agregaFilial(Empresa filial)
-    {
-        return false;
+        public override void AceptaVisitante(IVisitante visitante)
+        {
+            visitante.Visita(this);
+        }
+
+        public override bool AgregaFilial(Empresa filial)
+        {
+            return false;
+        }
     }
 }

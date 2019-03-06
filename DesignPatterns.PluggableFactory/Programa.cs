@@ -1,27 +1,31 @@
 ﻿using System;
 
-class Program
+namespace DesignPatterns.PluggableFactory
 {
-    static void Main(string[] args)
+    static class Program
     {
-        Automovil protoAutomovilEstandarAzul = new
-         AutomovilElectricidad();
-        protoAutomovilEstandarAzul.modelo = "estándar";
-        protoAutomovilEstandarAzul.color = "azul";
+        static void Main(string[] args)
+        {
+            Automovil protoAutomovilEstandarAzul = new
+                AutomovilElectricidad();
+            protoAutomovilEstandarAzul.Modelo = "estándar";
+            protoAutomovilEstandarAzul.Color = "azul";
 
-        Scooter protoScooterClasicoRojo = new ScooterGasolina();
-        protoScooterClasicoRojo.modelo = "clasico";
-        protoScooterClasicoRojo.color = "rojo";
+            Scooter protoScooterClasicoRojo = new ScooterGasolina();
+            protoScooterClasicoRojo.Modelo = "clasico";
+            protoScooterClasicoRojo.Color = "rojo";
 
-        FabricaVehiculo fabrica = new FabricaVehiculo();
-        fabrica.prototypeAutomovil =
-         protoAutomovilEstandarAzul;
-        fabrica.prototypeScooter = protoScooterClasicoRojo;
+            FabricaVehiculo fabrica = new FabricaVehiculo();
+            fabrica.PrototypeAutomovil =
+                protoAutomovilEstandarAzul;
+            fabrica.PrototypeScooter = protoScooterClasicoRojo;
 
-        Automovil auto = fabrica.creaAutomovil();
-        auto.visualizaCaracteristicas();
-        Scooter scooter = fabrica.creaScooter();
-        scooter.visualizaCaracteristicas();
+            Automovil auto = fabrica.CreaAutomovil();
+            auto.VisualizaCaracteristicas();
+            Scooter scooter = fabrica.CreaScooter();
+            scooter.VisualizaCaracteristicas();
+            Console.ReadKey();
+        }
     }
 }
 

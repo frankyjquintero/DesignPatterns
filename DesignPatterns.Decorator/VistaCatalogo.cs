@@ -1,14 +1,18 @@
 using System;
 
-public class VistaCatalogo
+namespace DesignPatterns.Decorator
 {
-    static void Main(string[] args)
+    public static class VistaCatalogo
     {
-        VistaVehiculo vistaVehiculo = new VistaVehiculo();
-        ModeloDecorador modeloDecorador = new
-          ModeloDecorador(vistaVehiculo);
-        MarcaDecorador marcaDecorador = new
-          MarcaDecorador(modeloDecorador);
-        marcaDecorador.visualiza();
+        static void Main(string[] args)
+        {
+            VistaVehiculo vistaVehiculo = new VistaVehiculo();
+            ModeloDecorador modeloDecorador = new
+                ModeloDecorador(vistaVehiculo);
+            MarcaDecorador marcaDecorador = new
+                MarcaDecorador(modeloDecorador);
+            marcaDecorador.Visualiza();
+            Console.ReadKey();
+        }
     }
 }

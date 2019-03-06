@@ -1,33 +1,36 @@
 using System;
 
-public class ComponentePdf
+namespace DesignPatterns.Adapter
 {
-    protected string contenido;
-
-    public void PdfFijaContenido(string contenido)
+    public class ComponentePdf
     {
-        this.contenido = contenido;
-    }
+        protected string contenido;
+
+        public void PdfFijaContenido(string contenido)
+        {
+            this.contenido = contenido;
+        }
 
 
-    public void PdfPreparaVisualizacion()
-    {
-        Console.WriteLine("Visualiza PDF: Comienzo");
-    }
+        public void PdfPreparaVisualizacion()
+        {
+            Console.WriteLine("Visualiza PDF: Comienzo");
+        }
 
-    public void PdfRefresca()
-    {
-        Console.WriteLine("Visualiza contenido PDF: " +
-          contenido);
-    }
+        public void PdfRefresca()
+        {
+            Console.WriteLine("Visualiza contenido PDF: " +
+                              contenido);
+        }
 
-    public void PdfFinalizaVisualizacion()
-    {
-        Console.WriteLine("Visualiza PDF: Fin");
-    }
+        public void PdfFinalizaVisualizacion()
+        {
+            Console.WriteLine("Visualiza PDF: Fin");
+        }
 
-    public void PdfEnviaImpresora()
-    {
-        Console.WriteLine("Impresión PDF: " + contenido);
+        public void PdfEnviaImpresora()
+        {
+            Console.WriteLine("Impresión PDF: " + contenido);
+        }
     }
 }

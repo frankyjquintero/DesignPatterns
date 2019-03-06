@@ -1,28 +1,31 @@
 using System;
 
-public abstract class Pedido
+namespace DesignPatterns.TemplateMethod
 {
-    protected double importeSinIVA;
-    protected double importeIVA;
-    protected double importeConIVA;
-
-    protected abstract void calculaIVA();
-
-    public void calculaPrecioConIVA()
+    public abstract class Pedido
     {
-        this.calculaIVA();
-        importeConIVA = importeSinIVA + importeIVA;
-    }
+        protected double importeSinIva;
+        protected double importeIva;
+        protected double importeConIva;
 
-    public void setImporteSinIVA(double importeSinIVA)
-    {
-        this.importeSinIVA = importeSinIVA;
-    }
+        protected abstract void CalculaIva();
 
-    public void visualiza()
-    {
-        Console.WriteLine("Pedido");
-        Console.WriteLine("Importe sin IVA " + importeSinIVA);
-        Console.WriteLine("Importe con IVA " + importeConIVA);
+        public void CalculaPrecioConIva()
+        {
+            this.CalculaIva();
+            importeConIva = importeSinIva + importeIva;
+        }
+
+        public void SetImporteSinIva(double importeSinIva)
+        {
+            this.importeSinIva = importeSinIva;
+        }
+
+        public void Visualiza()
+        {
+            Console.WriteLine("Pedido");
+            Console.WriteLine("Importe sin IVA " + importeSinIva);
+            Console.WriteLine("Importe con IVA " + importeConIva);
+        }
     }
 }

@@ -1,27 +1,31 @@
 ﻿using System;
 
-class Concesionario
+namespace DesignPatterns.Multicast
 {
-    static void Main(string[] args)
+    internal static class Concesionario
     {
-        DireccionGeneral direccionGeneral = new
-      DireccionGeneral();
-        DireccionComercial direccionComercial = new
-      DireccionComercial();
-        Comercial comercial1 = new Comercial("Pablo");
-        Comercial comercial2 = new Comercial("Enrique");
-        Administrativo administrativo = new Administrativo(
-         "Juan");
-        direccionGeneral.agregaReceptorGeneral(comercial1);
-        direccionGeneral.agregaReceptorGeneral(comercial2);
-        direccionGeneral.agregaReceptorGeneral
-         (administrativo);
-        direccionGeneral.enviaMensajes();
-        direccionComercial.agregaReceptorComercial
-         (comercial1);
-        direccionComercial.agregaReceptorComercial
-         (comercial2);
-        direccionComercial.enviaMensajes();
+        static void Main(string[] args)
+        {
+            DireccionGeneral direccionGeneral = new
+                DireccionGeneral();
+            DireccionComercial direccionComercial = new
+                DireccionComercial();
+            Comercial comercial1 = new Comercial("Pablo");
+            Comercial comercial2 = new Comercial("Enrique");
+            Administrativo administrativo = new Administrativo(
+                "Juan");
+            direccionGeneral.AgregaReceptorGeneral(comercial1);
+            direccionGeneral.AgregaReceptorGeneral(comercial2);
+            direccionGeneral.AgregaReceptorGeneral
+                (administrativo);
+            direccionGeneral.EnviaMensajes();
+            direccionComercial.AgregaReceptorComercial
+                (comercial1);
+            direccionComercial.AgregaReceptorComercial
+                (comercial2);
+            direccionComercial.EnviaMensajes();
+            Console.ReadKey();
+        }
     }
 }
 

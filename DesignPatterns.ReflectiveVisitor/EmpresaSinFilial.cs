@@ -1,13 +1,14 @@
-using System;
-
-public class EmpresaSinFilial : Empresa
+namespace DesignPatterns.ReflectiveVisitor
 {
-    public EmpresaSinFilial(string nombre, string email,
-     string direccion)
-        : base(nombre, email, direccion) { }
-
-    public override bool agregaFilial(Empresa filiale)
+    public class EmpresaSinFilial : Empresa
     {
-        return false;
+        public EmpresaSinFilial(string nombre, string email,
+            string direccion)
+            : base(nombre, email, direccion) { }
+
+        public override bool AgregaFilial(Empresa filiale)
+        {
+            return false;
+        }
     }
 }

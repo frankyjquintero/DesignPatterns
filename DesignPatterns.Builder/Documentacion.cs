@@ -1,11 +1,13 @@
-using System;
 using System.Collections.Generic;
 
-public abstract class Documentacion
+namespace DesignPatterns.Builder
 {
-    protected IList<string> contenido =
-        new List<string>();
+    public abstract class Documentacion
+    {
+        protected IList<string> contenido =
+            new List<string>();
 
-    public abstract void agregaDocumento(string documento);
-    public abstract void imprime();
+        public abstract void AgregaDocumento(string documento);
+        public abstract void Imprime();
+    }
 }
